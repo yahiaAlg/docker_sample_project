@@ -52,6 +52,9 @@ services:
       - POSTGRES_DB=your_db
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./init-scripts:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
     deploy:
       resources:
         limits:
