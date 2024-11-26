@@ -1,6 +1,25 @@
 let originalTexts = new Map(); // Store original texts
 let isArabic = false;
 
+function playVideo() {
+  document.querySelector(".video-placeholder").style.display = "none";
+  document.getElementById("video-frame").style.display = "block";
+  document.getElementById("video-frame").src += "?autoplay=1";
+}
+
+function playVideo() {
+  const videoFrame = document.getElementById("video-frame");
+  const placeholder = document.querySelector(".video-placeholder");
+
+  placeholder.style.display = "none";
+  videoFrame.style.display = "block";
+
+  // Add autoplay parameter to URL when playing
+  if (videoFrame.src.indexOf("autoplay=1") === -1) {
+    videoFrame.src += "&autoplay=1";
+  }
+}
+
 async function translateText(text) {
   try {
     const response = await fetch("https://libretranslate.de/translate", {
