@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In/Sign Up - AI Master</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #1a2a6c;
+        --secondary-color: #b21f1f;
+        --accent-color: #fdbb2d;
+        --dark-blue: #0d1b4a;
+        --electric-purple: #9945ff;
+        --cyan: #14f195;
+        --electric-purple: #7b2cbf;
+        --accent-color: #9d4edd;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        overflow-x: hidden;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+        min-height: 100vh;
+      }
+
+      /* Navbar Styles */
+      .navbar {
+        background: linear-gradient(
+          to right,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        padding: 1rem 0;
+        transition: all 0.3s ease;
+      }
+
+      .navbar.scrolled {
+        padding: 0.5rem 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--dark-blue);
+        color: white;
+        padding: 50px 0;
+      }
+
+      .auth-container {
+        margin-top: 80px;
+        margin-bottom: 40px;
+      }
+
+      .auth-card {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .auth-sidebar {
+        background: linear-gradient(
+          135deg,
+          var(--electric-purple),
+          var(--accent-color)
+        );
+        color: white;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .auth-form {
+        padding: 3rem;
+      }
+
+      .form-control {
+        border-radius: 10px;
+        padding: 12px;
+        margin-bottom: 1rem;
+      }
+
+      .btn-auth {
+        background: var(--electric-purple);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 12px;
+        width: 100%;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .btn-auth:hover {
+        background: var(--accent-color);
+        transform: translateY(-2px);
+      }
+
+      .social-login {
+        display: flex;
+        gap: 1rem;
+        margin: 1.5rem 0;
+      }
+
+      .social-btn {
+        flex: 1;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .social-btn:hover {
+        background: #f8f9fa;
+        transform: translateY(-2px);
+      }
+
+      .divider {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin: 1.5rem 0;
+      }
+
+      .divider::before,
+      .divider::after {
+        content: "";
+        flex: 1;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .divider span {
+        padding: 0 1rem;
+        color: #6c757d;
+      }
+
+      .form-check-input:checked {
+        background-color: var(--electric-purple);
+        border-color: var(--electric-purple);
+      }
+
+      .password-toggle {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #6c757d;
+      }
+
+      .auth-switch {
+        text-align: center;
+        margin-top: 1.5rem;
+      }
+
+      .auth-switch a {
+        color: var(--electric-purple);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .auth-switch a:hover {
+        color: var(--accent-color);
+      }
+
+      @media (max-width: 768px) {
+        .auth-sidebar {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation (same as main page) -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="./default.html">
+          <i class="fas fa-brain me-2"></i>AI Master
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="./deault.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./default.html#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./default.html#pricing">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">Contact</a>
+            </li>
+          </ul>
+          <a href="./login.html" class="btn btn-outline-light">Try for Free</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sign Up Page -->
+    <div class="container auth-container" id="signup">
+      <div class="row">
+        <div class="col-md-10 col-lg-8 mx-auto">
+          <div class="auth-card">
+            <div class="row g-0">
+              <div class="col-md-5 auth-sidebar">
+                <h2 class="mb-4">Join AI Master</h2>
+                <p>
+                  Create your account and start exploring the endless
+                  possibilities of AI technology.
+                </p>
+                <div class="mt-4">
+                  <i class="fas fa-rocket fa-4x"></i>
+                </div>
+              </div>
+              <div class="col-md-7 auth-form">
+                <h3 class="mb-4">Sign Up</h3>
+                <form id="signupForm">
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">First Name</label>
+                      <input type="text" class="form-control" required />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">Last Name</label>
+                      <input type="text" class="form-control" required />
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" required />
+                  </div>
+                  <div class="mb-3 position-relative">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" required />
+                    <i class="fas fa-eye password-toggle"></i>
+                  </div>
+                  <div class="mb-3 position-relative">
+                    <label class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" required />
+                    <i class="fas fa-eye password-toggle"></i>
+                  </div>
+                  <div class="mb-3">
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="terms"
+                        required
+                      />
+                      <label class="form-check-label" for="terms">
+                        I agree to the <a href="#">Terms of Service</a> and
+                        <a href="#">Privacy Policy</a>
+                      </label>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-auth">
+                    Create Account
+                  </button>
+
+                  <div class="divider">
+                    <span>or sign up with</span>
+                  </div>
+
+                  <div class="social-login">
+                    <div class="social-btn">
+                      <i class="fab fa-google"></i>
+                      <span>Google</span>
+                    </div>
+                    <div class="social-btn">
+                      <i class="fab fa-github"></i>
+                      <span>GitHub</span>
+                    </div>
+                  </div>
+
+                  <div class="auth-switch">
+                    Already have an account? <a href="./login.html">Sign In</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <h5 class="mb-4">About AI Master</h5>
+            <p>
+              Revolutionizing workflows with advanced AI solutions for
+              developers, designers, and creators.
+            </p>
+            <div class="social-icons mt-4">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <h5 class="mb-4">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Home</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Services</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Pricing</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">About</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <h5 class="mb-4">Resources</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none"
+                  >Documentation</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">API</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Blog</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Support</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5 class="mb-4">Newsletter</h5>
+            <p>Subscribe to our newsletter for updates and tips.</p>
+            <form class="newsletter-form">
+              <div class="input-group mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Enter your email"
+                />
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <hr class="mt-4 mb-3 border-light" />
+        <div class="text-center">
+          <p class="mb-0">&copy; 2024 AI Master. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Toggle password visibility
+      document.querySelectorAll(".password-toggle").forEach((toggle) => {
+        toggle.addEventListener("click", function () {
+          const input = this.previousElementSibling;
+          if (input.type === "password") {
+            input.type = "text";
+            this.classList.remove("fa-eye");
+            this.classList.add("fa-eye-slash");
+          } else {
+            input.type = "password";
+            this.classList.remove("fa-eye-slash");
+            this.classList.add("fa-eye");
+          }
+        });
+      });
+
+      // Form submission handlers
+      document
+        .getElementById("signinForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Add sign in logic here
+        });
+
+      document
+        .getElementById("signupForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Add sign up logic here
+        });
+
+      // Toggle between sign in and sign up forms
+      const signInSection = document.querySelector(".auth-container");
+      const signUpSection = document.querySelector("#signup");
+
+      document.querySelectorAll(".auth-switch a").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          if (this.getAttribute("href") === "#signup") {
+            signInSection.style.display = "none";
+            signUpSection.style.display = "block";
+          } else {
+            signInSection.style.display = "block";
+            signUpSection.style.display = "none";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

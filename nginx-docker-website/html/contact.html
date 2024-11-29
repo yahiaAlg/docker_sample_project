@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - AI Master</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #1a2a6c;
+        --secondary-color: #b21f1f;
+        --accent-color: #fdbb2d;
+        --dark-blue: #0d1b4a;
+        --electric-purple: #9945ff;
+        --cyan: #14f195;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        overflow-x: hidden;
+      }
+
+      /* Navbar Styles */
+      .navbar {
+        background: linear-gradient(
+          to right,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        padding: 1rem 0;
+        transition: all 0.3s ease;
+      }
+
+      .navbar.scrolled {
+        padding: 0.5rem 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--dark-blue);
+        color: white;
+        padding: 50px 0;
+      }
+      /* About Page Specific Styles */
+      .team-member-card {
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+
+      .team-member-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .team-member-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto;
+      }
+
+      .timeline {
+        position: relative;
+        padding: 2rem 0;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 100%;
+        background-color: var(--electric-purple);
+      }
+
+      .timeline-item {
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      .timeline-content {
+        background: white;
+        border-radius: 15px;
+        padding: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        position: relative;
+        width: calc(50% - 30px);
+      }
+
+      .timeline-item:nth-child(odd) .timeline-content {
+        margin-left: auto;
+      }
+
+      .timeline-date {
+        color: var(--electric-purple);
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Contact Page Specific Styles */
+      .contact-info-card {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        height: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .contact-info-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .contact-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--electric-purple);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        font-size: 1.5rem;
+      }
+
+      .map-container {
+        height: 400px;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+
+      .contact-form {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation (same as main page) -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="./default.html">
+          <i class="fas fa-brain me-2"></i>AI Master
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="./deault.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./default.html#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./default.html#pricing">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">Contact</a>
+            </li>
+          </ul>
+          <a href="./login.html" class="btn btn-outline-light">Try for Free</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Contact Page Content -->
+    <div class="contact-page">
+      <!-- Hero Section -->
+      <section class="py-5 bg-light mt-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 mx-auto text-center">
+              <h1 class="display-4 mb-4">Get in Touch</h1>
+              <p class="lead">
+                We'd love to hear from you. Here's how you can reach us.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Information -->
+      <section class="py-5">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="contact-info-card">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h4 class="text-center">Visit Us</h4>
+                <p class="text-center mb-0">
+                  123 AI Street<br />Tech Valley, CA 94043<br />United States
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="contact-info-card">
+                <div class="contact-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <h4 class="text-center">Call Us</h4>
+                <p class="text-center mb-0">
+                  +1 (555) 123-4567<br />Monday to Friday<br />9:00 AM - 6:00 PM
+                  PST
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="contact-info-card">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <h4 class="text-center">Email Us</h4>
+                <p class="text-center mb-0">
+                  info@aimaster.com<br />support@aimaster.com
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Company History Timeline -->
+      <section class="py-5">
+        <div class="container">
+          <h2 class="text-center mb-5">Our Journey</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-date">2020</div>
+                <h4>The Beginning</h4>
+                <p>
+                  Founded by a team of AI enthusiasts and tech visionaries in
+                  Silicon Valley. Launched our first AI model training platform.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-date">2021</div>
+                <h4>Rapid Growth</h4>
+                <p>
+                  Expanded our services to include custom AI solutions. Reached
+                  our first 1,000 enterprise customers.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-date">2022</div>
+                <h4>Global Expansion</h4>
+                <p>
+                  Opened offices in Europe and Asia. Launched our revolutionary
+                  AI-powered analytics platform.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-date">2023</div>
+                <h4>Innovation Award</h4>
+                <p>
+                  Received the Global AI Innovation Award. Released our
+                  open-source AI development toolkit.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-date">2024</div>
+                <h4>Present Day</h4>
+                <p>
+                  Leading the industry with cutting-edge AI solutions and
+                  serving over 10,000 clients worldwide.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Achievements Section -->
+      <section class="py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center mb-5">Our Achievements</h2>
+          <div class="row g-4">
+            <div class="col-md-3 col-6">
+              <div class="text-center">
+                <div class="display-4 fw-bold text-primary mb-2">10K+</div>
+                <p class="mb-0">Global Clients</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="text-center">
+                <div class="display-4 fw-bold text-primary mb-2">50M+</div>
+                <p class="mb-0">AI Models Trained</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="text-center">
+                <div class="display-4 fw-bold text-primary mb-2">15+</div>
+                <p class="mb-0">Industry Awards</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="text-center">
+                <div class="display-4 fw-bold text-primary mb-2">24/7</div>
+                <p class="mb-0">Support Available</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technologies Section -->
+      <section class="py-5">
+        <div class="container">
+          <h2 class="text-center mb-5">Technologies We Use</h2>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="text-center mb-3">
+                    <i class="fas fa-brain fs-1 text-primary"></i>
+                  </div>
+                  <h4 class="text-center">Deep Learning</h4>
+                  <p class="text-center">
+                    State-of-the-art neural networks and deep learning
+                    architectures for complex problem-solving.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="text-center mb-3">
+                    <i class="fas fa-robot fs-1 text-primary"></i>
+                  </div>
+                  <h4 class="text-center">Machine Learning</h4>
+                  <p class="text-center">
+                    Advanced ML algorithms for pattern recognition and
+                    predictive analytics.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="text-center mb-3">
+                    <i class="fas fa-microchip fs-1 text-primary"></i>
+                  </div>
+                  <h4 class="text-center">Cloud Computing</h4>
+                  <p class="text-center">
+                    Scalable cloud infrastructure for efficient AI model
+                    deployment and management.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Partners Section -->
+      <section class="py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center mb-5">Our Partners</h2>
+          <div class="row g-4 align-items-center">
+            <div class="col-md-3 col-6">
+              <div class="text-center">
+                <i class="fas fa-building display-4 text-primary"></i>
+                <p class="mt-2">Tech Corp</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="text-center">
+                <i class="fas fa-laptop-code display-4 text-primary"></i>
+                <p class="mt-2">InnovateTech</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="text-center">
+                <i class="fas fa-network-wired display-4 text-primary"></i>
+                <p class="mt-2">DataNet</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="text-center">
+                <i class="fas fa-cloud display-4 text-primary"></i>
+                <p class="mt-2">CloudSys</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="py-5" style="background-color: var(--electric-purple)">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 mx-auto text-center text-white">
+              <h2 class="mb-4">Ready to Transform Your Business with AI?</h2>
+              <p class="lead mb-4">
+                Join thousands of satisfied customers who are already leveraging
+                our AI solutions.
+              </p>
+              <a href="contact.html" class="btn btn-light btn-lg"
+                >Contact Us Today</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Form -->
+      <section class="py-5 bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 mx-auto">
+              <div class="contact-form">
+                <h3 class="text-center mb-4">Send Us a Message</h3>
+                <form>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Your Name"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="Your Email"
+                        required
+                      />
+                    </div>
+                    <div class="col-12">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Subject"
+                        required
+                      />
+                    </div>
+                    <div class="col-12">
+                      <textarea
+                        class="form-control"
+                        rows="5"
+                        placeholder="Your Message"
+                        required
+                      ></textarea>
+                    </div>
+                    <div class="col-12 text-center">
+                      <button type="submit" class="btn btn-primary btn-lg">
+                        Send Message
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Map Section -->
+      <section class="py-5">
+        <div class="container">
+          <div class="map-container">
+            <!-- Replace with actual map implementation -->
+            <div
+              class="bg-secondary h-100 d-flex align-items-center justify-content-center text-white"
+            >
+              <p class="mb-0">Map Integration Goes Here</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer (same as main page) -->
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <h5 class="mb-4">About AI Master</h5>
+            <p>
+              Revolutionizing workflows with advanced AI solutions for
+              developers, designers, and creators.
+            </p>
+            <div class="social-icons mt-4">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <h5 class="mb-4">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Home</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Services</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Pricing</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">About</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <h5 class="mb-4">Resources</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none"
+                  >Documentation</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">API</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Blog</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Support</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5 class="mb-4">Newsletter</h5>
+            <p>Subscribe to our newsletter for updates and tips.</p>
+            <form class="newsletter-form">
+              <div class="input-group mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Enter your email"
+                />
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <hr class="mt-4 mb-3 border-light" />
+        <div class="text-center">
+          <p class="mb-0">&copy; 2024 AI Master. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

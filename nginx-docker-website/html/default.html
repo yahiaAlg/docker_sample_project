@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Master - Unleash the Power of AI</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary-color: #1a2a6c;
+        --secondary-color: #b21f1f;
+        --accent-color: #fdbb2d;
+        --dark-blue: #0d1b4a;
+        --electric-purple: #9945ff;
+        --cyan: #14f195;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        overflow-x: hidden;
+      }
+
+      /* Navbar Styles */
+      .navbar {
+        background: linear-gradient(
+          to right,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        padding: 1rem 0;
+        transition: all 0.3s ease;
+      }
+
+      .navbar.scrolled {
+        padding: 0.5rem 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        min-height: 600px;
+        background: var(--dark-blue);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .particle {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        animation: float 8s infinite linear;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+        100% {
+          transform: translateY(-100vh) rotate(360deg);
+        }
+      }
+
+      /* Services Section */
+      .services-card {
+        background: white;
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .services-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .service-icon {
+        font-size: 2.5rem;
+        background: linear-gradient(
+          45deg,
+          var(--primary-color),
+          var(--electric-purple)
+        );
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      /* Features Section */
+      .feature-section {
+        padding: 100px 0;
+        background: #f8f9fa;
+      }
+
+      .feature-img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Pricing Section */
+      .pricing-card {
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+      }
+
+      .pricing-card:hover {
+        transform: scale(1.05);
+      }
+
+      .pricing-card.featured {
+        border: 2px solid var(--electric-purple);
+      }
+
+      /* Testimonials */
+      .testimonial-card {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: linear-gradient(
+          45deg,
+          var(--primary-color),
+          var(--electric-purple)
+        );
+        color: white;
+        padding: 100px 0;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--dark-blue);
+        color: white;
+        padding: 50px 0;
+      }
+
+      /* Animations */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        .hero {
+          height: auto;
+          padding: 100px 0;
+        }
+
+        .services-card {
+          margin-bottom: 2rem;
+        }
+      }
+
+      /* How It Works Section */
+      .step-card {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        height: 100%;
+        transition: transform 0.3s ease;
+      }
+
+      .step-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .step-number {
+        width: 40px;
+        height: 40px;
+        background: var(--electric-purple);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      /* Testimonials Section */
+      .testimonial-carousel {
+        padding: 3rem 0;
+      }
+
+      .testimonial-card {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .testimonial-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: #e9ecef;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+      }
+
+      /* Pricing Section */
+      .pricing-badge {
+        position: absolute;
+        top: -10px;
+        right: 10px;
+        background: var(--electric-purple);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+      }
+
+      /* Newsletter Section */
+      .newsletter-form {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .social-icons a {
+        color: white;
+        font-size: 1.5rem;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        color: var(--accent-color);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="./default.html">
+          <i class="fas fa-brain me-2"></i>AI Master
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="./deault.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./default.html#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./default.html#pricing">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">Contact</a>
+            </li>
+          </ul>
+          <a href="./login.html" class="btn btn-outline-light">Try for Free</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero d-flex align-items-center" id="home">
+      <div class="particles" id="particles"></div>
+      <div class="container hero-content text-center">
+        <h1 class="display-2 fw-bold mb-4 text-white">
+          Unleash the Power of AI
+        </h1>
+        <p class="lead mb-4 text-white">One platform, endless possibilities</p>
+        <p class="mb-5 text-white">
+          Experience the future of AI-driven solutions for programming, image
+          manipulation, audio generation, and text processing.
+        </p>
+        <a href="#" class="btn btn-primary btn-lg me-3">Get Started</a>
+        <a href="#" class="btn btn-outline-light btn-lg">Watch Demo</a>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-5" id="services">
+      <div class="container">
+        <h2 class="text-center mb-5 fade-in">Our Services</h2>
+        <div class="row g-4">
+          <div class="col-md-3">
+            <div class="services-card p-4 text-center fade-in">
+              <i class="fas fa-code service-icon mb-3"></i>
+              <h4>Programming Genius</h4>
+              <p>Code debugging, documentation, and more</p>
+            </div>
+          </div>
+          <!-- Add other service cards similarly -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="feature-section">
+      <div class="container">
+        <div class="row align-items-center mb-5">
+          <div class="col-md-6 fade-in">
+            <h2>Smart Code Generation</h2>
+            <p>
+              Generate high-quality code in multiple programming languages with
+              our advanced AI models.
+            </p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+          <div class="col-md-6 fade-in">
+            <!-- Add feature illustration here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add remaining sections similarly -->
+    <!-- How It Works Section -->
+    <section class="py-5 bg-light" id="how-it-works">
+      <div class="container">
+        <h2 class="text-center mb-5 fade-in">How It Works</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="step-card fade-in">
+              <div class="step-number">1</div>
+              <h4>Choose your task</h4>
+              <p>
+                Select from our wide range of AI-powered services and tools.
+              </p>
+              <i class="fas fa-tasks fs-2 text-primary"></i>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="step-card fade-in">
+              <div class="step-number">2</div>
+              <h4>Provide input</h4>
+              <p>Share your requirements or upload necessary files.</p>
+              <i class="fas fa-upload fs-2 text-primary"></i>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="step-card fade-in">
+              <div class="step-number">3</div>
+              <h4>Get results</h4>
+              <p>Receive AI-generated results in seconds.</p>
+              <i class="fas fa-magic fs-2 text-primary"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5" id="testimonials">
+      <div class="container">
+        <h2 class="text-center mb-5 fade-in">What Our Users Say</h2>
+        <div
+          id="testimonialCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="testimonial-card text-center">
+                <div class="testimonial-avatar">
+                  <i class="fas fa-user fs-2"></i>
+                </div>
+                <p class="lead mb-3">
+                  "AI Master has revolutionized our development workflow. The
+                  code generation and debugging features are simply amazing!"
+                </p>
+                <h5>John Doe</h5>
+                <p class="text-muted">Senior Developer, Tech Corp</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="testimonial-card text-center">
+                <div class="testimonial-avatar">
+                  <i class="fas fa-user fs-2"></i>
+                </div>
+                <p class="lead mb-3">
+                  "The image generation capabilities are incredible. We've saved
+                  countless hours on design work."
+                </p>
+                <h5>Jane Smith</h5>
+                <p class="text-muted">Creative Director, Design Studio</p>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-5 bg-light" id="pricing">
+      <div class="container">
+        <h2 class="text-center mb-5 fade-in">Choose Your Plan</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="pricing-card card h-100 fade-in">
+              <div class="card-body text-center">
+                <h3 class="card-title">Basic</h3>
+                <div class="display-4 my-4">
+                  $29<small class="fs-5">/mo</small>
+                </div>
+                <ul class="list-unstyled">
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>5 AI Tasks/day
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>Basic Code
+                    Generation
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>Standard
+                    Support
+                  </li>
+                </ul>
+                <a
+                  href="./pricings.html"
+                  class="btn btn-outline-primary btn-lg mt-3"
+                >
+                  Choose Plan
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pricing-card card h-100 featured fade-in">
+              <div class="pricing-badge">Popular</div>
+              <div class="card-body text-center">
+                <h3 class="card-title">Pro</h3>
+                <div class="display-4 my-4">
+                  $99<small class="fs-5">/mo</small>
+                </div>
+                <ul class="list-unstyled">
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>Unlimited AI
+                    Tasks
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>Advanced Code
+                    Generation
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>Priority
+                    Support
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>Custom
+                    Solutions
+                  </li>
+                </ul>
+                <a href="./pricings.html" class="btn btn-primary btn-lg mt-3"
+                  >Choose Plan</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pricing-card card h-100 fade-in">
+              <div class="card-body text-center">
+                <h3 class="card-title">Enterprise</h3>
+                <div class="display-4 my-4">Custom</div>
+                <ul class="list-unstyled">
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>Custom
+                    Solutions
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>Dedicated
+                    Support
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>API Access
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>Custom
+                    Integration
+                  </li>
+                </ul>
+                <a
+                  href="./pricings.html"
+                  class="btn btn-outline-primary btn-lg mt-3"
+                >
+                  Contact Sales
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container text-center">
+        <h2 class="display-4 mb-4 fade-in">
+          Ready to Revolutionize Your Workflow?
+        </h2>
+        <p class="lead mb-5 fade-in">Join thousands of satisfied users today</p>
+        <button class="btn btn-light btn-lg fade-in">Get Started Now</button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <h5 class="mb-4">About AI Master</h5>
+            <p>
+              Revolutionizing workflows with advanced AI solutions for
+              developers, designers, and creators.
+            </p>
+            <div class="social-icons mt-4">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <h5 class="mb-4">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Home</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Services</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Pricing</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">About</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <h5 class="mb-4">Resources</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none"
+                  >Documentation</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">API</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Blog</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white text-decoration-none">Support</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5 class="mb-4">Newsletter</h5>
+            <p>Subscribe to our newsletter for updates and tips.</p>
+            <form class="newsletter-form">
+              <div class="input-group mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Enter your email"
+                />
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <hr class="mt-4 mb-3 border-light" />
+        <div class="text-center">
+          <p class="mb-0">&copy; 2024 AI Master. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Particles Animation
+      function createParticles() {
+        const particles = document.getElementById("particles");
+        for (let i = 0; i < 50; i++) {
+          const particle = document.createElement("div");
+          particle.className = "particle";
+          particle.style.width = Math.random() * 5 + "px";
+          particle.style.height = particle.style.width;
+          particle.style.left = Math.random() * 100 + "%";
+          particle.style.animationDelay = Math.random() * 5 + "s";
+          particles.appendChild(particle);
+        }
+      }
+
+      // Scroll Animations
+      function handleScroll() {
+        const elements = document.querySelectorAll(".fade-in");
+        const navbar = document.querySelector(".navbar");
+
+        elements.forEach((element) => {
+          const elementTop = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          if (elementTop < windowHeight * 0.75) {
+            element.classList.add("visible");
+          }
+        });
+
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      }
+
+      // Initialize
+      document.addEventListener("DOMContentLoaded", () => {
+        createParticles();
+        handleScroll();
+        window.addEventListener("scroll", handleScroll);
+      });
+    </script>
+  </body>
+</html>
