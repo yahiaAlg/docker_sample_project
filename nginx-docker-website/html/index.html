@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Master - Unleash the Power of AI</title>
+    <title>Mobtakir - Unleash the Power of AI</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -35,7 +35,17 @@
         font-family: "Segoe UI", sans-serif;
         overflow-x: hidden;
       }
-
+      a.no-link-style {
+        display: block;
+        text-decoration: none;
+        color: var(--text-dark);
+        transition: transform 0.3s ease-in-out;
+      }
+      a.no-link-style:hover {
+        text-decoration: none;
+        color: var(--electric-purple);
+        transform: scale(1.1) translateY(-25px);
+      }
       /* Navbar Styles */
       .navbar {
         background: linear-gradient(
@@ -335,8 +345,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="./default.html">
-          <i class="fas fa-brain me-2"></i>AI Master
+        <a class="navbar-brand" href="./index.html">
+          <i class="fas fa-brain me-2"></i>Mobtakir
         </a>
         <button
           class="navbar-toggler"
@@ -349,13 +359,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="./deault.html">Home</a>
+              <a class="nav-link active" href="./index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./default.html#services">Services</a>
+              <a class="nav-link" href="./index.html#services">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./default.html#pricing">Pricing</a>
+              <a class="nav-link" href="./index.html#pricing">Pricing</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./about.html">About</a>
@@ -394,41 +404,49 @@
         <h2 class="text-center mb-5 fade-in">Our Services</h2>
         <div class="row g-4">
           <div class="col-md-3">
-            <div class="services-card p-4 text-center fade-in">
-              <i class="fas fa-code service-icon mb-3"></i>
-              <h4>Programming Tasks</h4>
-              <p>
-                Code debugging, documentation, and development assistance
-                powered by AI.
-              </p>
-            </div>
+            <a class="no-link-style" href="./chatbot-interface.html">
+              <div class="services-card p-4 text-center fade-in">
+                <i class="fas fa-code service-icon mb-3"></i>
+                <h4>Programming Tasks</h4>
+                <p>
+                  Code debugging, documentation, and development assistance
+                  powered by AI.
+                </p>
+              </div>
+            </a>
           </div>
           <div class="col-md-3">
-            <div class="services-card p-4 text-center fade-in">
-              <i class="fas fa-image service-icon mb-3"></i>
-              <h3>Image Magic</h3>
-              <p>
-                Advanced image recognition and generation with customizable
-                styles.
-              </p>
-            </div>
+            <a class="no-link-style" href="./chatbot-interface.html">
+              <div class="services-card p-4 text-center fade-in">
+                <i class="fas fa-image service-icon mb-3"></i>
+                <h3>Image Magic</h3>
+                <p>
+                  Advanced image recognition and generation with customizable
+                  styles.
+                </p>
+              </div>
+            </a>
           </div>
           <div class="col-md-3">
-            <div class="services-card p-4 text-center fade-in">
-              <i class="fas fa-volume-up service-icon mb-3"></i>
-              <h3>Audio Creation</h3>
-              <p>Sound effect generation and natural speech synthesis.</p>
-            </div>
+            <a class="no-link-style" href="./chatbot-interface.html">
+              <div class="services-card p-4 text-center fade-in">
+                <i class="fas fa-volume-up service-icon mb-3"></i>
+                <h3>Audio Creation</h3>
+                <p>Sound effect generation and natural speech synthesis.</p>
+              </div>
+            </a>
           </div>
           <div class="col-md-3">
-            <div class="services-card p-4 text-center fade-in">
-              <i class="fas fa-text-height service-icon mb-3"></i>
-              <h3>Text Processing</h3>
-              <p>
-                Chat, translation, and intelligent question-answering
-                capabilities.
-              </p>
-            </div>
+            <a class="no-link-style" href="./chatbot-interface.html">
+              <div class="services-card p-4 text-center fade-in">
+                <i class="fas fa-text-height service-icon mb-3"></i>
+                <h3>Text Processing</h3>
+                <p>
+                  Chat, translation, and intelligent question-answering
+                  capabilities.
+                </p>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -503,7 +521,7 @@
                   <i class="fas fa-user fs-2"></i>
                 </div>
                 <p class="lead mb-3">
-                  "AI Master has revolutionized our development workflow. The
+                  "Mobtakir has revolutionized our development workflow. The
                   code generation and debugging features are simply amazing!"
                 </p>
                 <h5>John Doe</h5>
@@ -654,7 +672,9 @@
           Ready to Revolutionize Your Workflow?
         </h2>
         <p class="lead mb-5 fade-in">Join thousands of satisfied users today</p>
-        <button class="btn btn-light btn-lg fade-in">Get Started Now</button>
+        <a href="./login.html" class="btn btn-light btn-lg fade-in"
+          >Get Started Now</a
+        >
       </div>
     </section>
 
@@ -663,7 +683,7 @@
       <div class="container">
         <div class="row g-4">
           <div class="col-md-4">
-            <h5 class="mb-4">About AI Master</h5>
+            <h5 class="mb-4">About Mobtakir</h5>
             <p>
               Revolutionizing workflows with advanced AI solutions for
               developers, designers, and creators.
@@ -711,9 +731,7 @@
             <h5 class="mb-4">Resources</h5>
             <ul class="list-unstyled">
               <li class="mb-2">
-                <a
-                  href="./API-documentation.html"
-                  class="text-white text-decoration-none"
+                <a href="./contact.html" class="text-white text-decoration-none"
                   >Contact</a
                 >
               </li>
@@ -753,7 +771,7 @@
         </div>
         <hr class="mt-4 mb-3 border-light" />
         <div class="text-center">
-          <p class="mb-0">&copy; 2024 AI Master. All rights reserved.</p>
+          <p class="mb-0">&copy; 2024 Mobtakir. All rights reserved.</p>
         </div>
       </div>
     </footer>
