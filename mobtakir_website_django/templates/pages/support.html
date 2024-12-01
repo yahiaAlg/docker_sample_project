@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}support{% endblock title %}
+{% block styles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/support.css' %}" />
+{% endblock styles %}
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero-support">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 text-center">
+            <h1 class="display-4 mb-4">How can we help you?</h1>
+            <div class="search-box d-flex">
+              <input
+                type="text"
+                class="search-input"
+                placeholder="Search for help articles..."
+              />
+              <button class="search-btn">Search</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Help Categories -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Browse Help Topics</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card category-card">
+              <div class="card-body text-center">
+                <i class="fas fa-rocket fa-3x text-primary mb-3"></i>
+                <h4>Getting Started</h4>
+                <p>
+                  New to Mobtakir? Learn the basics and set up your account.
+                </p>
+                <a href="#" class="btn btn-outline-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card category-card">
+              <div class="card-body text-center">
+                <i class="fas fa-cogs fa-3x text-primary mb-3"></i>
+                <h4>Account Settings</h4>
+                <p>Manage your account, billing, and security settings.</p>
+                <a href="#" class="btn btn-outline-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card category-card">
+              <div class="card-body text-center">
+                <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+                <h4>Technical Support</h4>
+                <p>Troubleshooting guides and technical documentation.</p>
+                <a href="#" class="btn btn-outline-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="faq-item">
+              <div class="faq-question">
+                <h5 class="mb-0">How do I get started with Mobtakir?</h5>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Getting started is easy! Simply create an account, choose your
+                  subscription plan, and follow our quick setup guide. Our
+                  onboarding process will walk you through everything you need
+                  to know.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h5 class="mb-0">What payment methods do you accept?</h5>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  We accept all major credit cards, PayPal, and bank transfers.
+                  For enterprise customers, we also offer custom payment terms.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h5 class="mb-0">How secure is my data?</h5>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  We take security seriously. All data is encrypted both in
+                  transit and at rest, and we comply with industry-standard
+                  security protocols and regulations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="contact-form">
+              <h2 class="text-center mb-4">Contact Support</h2>
+              <form>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" required />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" required />
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Subject</label>
+                  <select class="form-select">
+                    <option>Technical Issue</option>
+                    <option>Billing Question</option>
+                    <option>Feature Request</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Message</label>
+                  <textarea class="form-control" rows="5" required></textarea>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">
+                    Submit Request
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional Support Options -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5">More Ways to Get Help</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card support-card">
+              <div class="card-body text-center">
+                <i class="fas fa-book fa-3x text-primary mb-3"></i>
+                <h4>Documentation</h4>
+                <p>Browse our detailed documentation and guides</p>
+                <a href="#" class="btn btn-outline-primary">View Docs</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card support-card">
+              <div class="card-body text-center">
+                <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                <h4>Community</h4>
+                <p>Join our community forum for discussions</p>
+                <a href="#" class="btn btn-outline-primary">Join Forum</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card support-card">
+              <div class="card-body text-center">
+                <i class="fas fa-video fa-3x text-primary mb-3"></i>
+                <h4>Video Tutorials</h4>
+                <p>Watch step-by-step video tutorials</p>
+                <a href="#" class="btn btn-outline-primary">Watch Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Chat Widget -->
+    <div class="chat-widget">
+      <button class="chat-button">
+        <i class="fas fa-comments"></i>
+      </button>
+    </div>
+{% endblock content %}
+{% block scripts %}
+    <script  type="text/javascript" src="{% static 'assets/js/support.js' %}" ></script>
+{% endblock scripts %}
+

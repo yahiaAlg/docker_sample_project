@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load django_bootstrap5 %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% bootstrap_css  %}
+    {% block styles %}{% endblock styles %}
+    <title>Mobtakir - Unleash the Power of AI - {% block title %} No Page title{% endblock title %}</title>
+</head>
+<body>
+    {% include "partials/_navbar.html" %}
+    {% block content %}
+      No content
+    {% endblock content %}
+    {% include "partials/_footer.html" %}
+    {% bootstrap_javascript  %}
+    {% block scripts %}{% endblock scripts %}
+  </body>
+</html>

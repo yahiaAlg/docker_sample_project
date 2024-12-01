@@ -1,0 +1,330 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{% endblock title %}
+{% block styles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/.css' %}" />
+{% endblock styles %}
+{% block content %}
+    <!-- Contact Page Content -->
+    <div class="contact-page">
+      <!-- Hero Section -->
+      <section class="py-5 bg-light mt-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 mx-auto text-center">
+              <h1 class="display-4 mb-4">Get in Touch</h1>
+              <p class="lead">
+                We'd love to hear from you. Here's how you can reach us.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Information -->
+      <section class="py-5">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="contact-info-card">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h4 class="text-center">Visit Us</h4>
+                <p class="text-center mb-0">
+                  123 AI Street<br />Tech Valley, CA 94043<br />United States
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="contact-info-card">
+                <div class="contact-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <h4 class="text-center">Call Us</h4>
+                <p class="text-center mb-0">
+                  +1 (555) 123-4567<br />Monday to Friday<br />9:00 AM - 6:00 PM
+                  PST
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="contact-info-card">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <h4 class="text-center">Email Us</h4>
+                <p class="text-center mb-0">
+                  info@aimaster.com<br />support@aimaster.com
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Company History Timeline -->
+      <section class="py-5">
+        <div class="container">
+          <h2 class="text-center mb-5">Our Journey</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-date">2020</div>
+                <h4>The Beginning</h4>
+                <p>
+                  Founded by a team of AI enthusiasts and tech visionaries in
+                  Silicon Valley. Launched our first AI model training platform.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-date">2021</div>
+                <h4>Rapid Growth</h4>
+                <p>
+                  Expanded our services to include custom AI solutions. Reached
+                  our first 1,000 enterprise customers.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-date">2022</div>
+                <h4>Global Expansion</h4>
+                <p>
+                  Opened offices in Europe and Asia. Launched our revolutionary
+                  AI-powered analytics platform.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-date">2023</div>
+                <h4>Innovation Award</h4>
+                <p>
+                  Received the Global AI Innovation Award. Released our
+                  open-source AI development toolkit.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-date">2024</div>
+                <h4>Present Day</h4>
+                <p>
+                  Leading the industry with cutting-edge AI solutions and
+                  serving over 10,000 clients worldwide.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Achievements Section -->
+      <section class="py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center mb-5">Our Achievements</h2>
+          <div class="row g-4">
+            <div class="col-md-3 col-6">
+              <div class="text-center">
+                <div class="display-4 fw-bold text-primary mb-2">10K+</div>
+                <p class="mb-0">Global Clients</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="text-center">
+                <div class="display-4 fw-bold text-primary mb-2">50M+</div>
+                <p class="mb-0">AI Models Trained</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="text-center">
+                <div class="display-4 fw-bold text-primary mb-2">15+</div>
+                <p class="mb-0">Industry Awards</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="text-center">
+                <div class="display-4 fw-bold text-primary mb-2">24/7</div>
+                <p class="mb-0">Support Available</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technologies Section -->
+      <section class="py-5">
+        <div class="container">
+          <h2 class="text-center mb-5">Technologies We Use</h2>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="text-center mb-3">
+                    <i class="fas fa-brain fs-1 text-primary"></i>
+                  </div>
+                  <h4 class="text-center">Deep Learning</h4>
+                  <p class="text-center">
+                    State-of-the-art neural networks and deep learning
+                    architectures for complex problem-solving.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="text-center mb-3">
+                    <i class="fas fa-robot fs-1 text-primary"></i>
+                  </div>
+                  <h4 class="text-center">Machine Learning</h4>
+                  <p class="text-center">
+                    Advanced ML algorithms for pattern recognition and
+                    predictive analytics.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="text-center mb-3">
+                    <i class="fas fa-microchip fs-1 text-primary"></i>
+                  </div>
+                  <h4 class="text-center">Cloud Computing</h4>
+                  <p class="text-center">
+                    Scalable cloud infrastructure for efficient AI model
+                    deployment and management.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Partners Section -->
+      <section class="py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center mb-5">Our Partners</h2>
+          <div class="row g-4 align-items-center">
+            <div class="col-md-3 col-6">
+              <div class="text-center">
+                <i class="fas fa-building display-4 text-primary"></i>
+                <p class="mt-2">Tech Corp</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="text-center">
+                <i class="fas fa-laptop-code display-4 text-primary"></i>
+                <p class="mt-2">InnovateTech</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="text-center">
+                <i class="fas fa-network-wired display-4 text-primary"></i>
+                <p class="mt-2">DataNet</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="text-center">
+                <i class="fas fa-cloud display-4 text-primary"></i>
+                <p class="mt-2">CloudSys</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="py-5" style="background-color: var(--electric-purple)">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 mx-auto text-center text-white">
+              <h2 class="mb-4">Ready to Transform Your Business with AI?</h2>
+              <p class="lead mb-4">
+                Join thousands of satisfied customers who are already leveraging
+                our AI solutions.
+              </p>
+              <a href="contact.html" class="btn btn-light btn-lg"
+                >Contact Us Today</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Form -->
+      <section class="py-5 bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 mx-auto">
+              <div class="contact-form">
+                <h3 class="text-center mb-4">Send Us a Message</h3>
+                <form>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Your Name"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="Your Email"
+                        required
+                      />
+                    </div>
+                    <div class="col-12">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Subject"
+                        required
+                      />
+                    </div>
+                    <div class="col-12">
+                      <textarea
+                        class="form-control"
+                        rows="5"
+                        placeholder="Your Message"
+                        required
+                      ></textarea>
+                    </div>
+                    <div class="col-12 text-center">
+                      <button type="submit" class="btn btn-primary btn-lg">
+                        Send Message
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Map Section -->
+      <section class="py-5">
+        <div class="container">
+          <div class="map-container">
+            <!-- Replace with actual map implementation -->
+            <div
+              class="bg-secondary h-100 d-flex align-items-center justify-content-center text-white"
+            >
+              <p class="mb-0">Map Integration Goes Here</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+{% endblock content %}
+{% block scripts %}
+    <script  type="text/javascript" src="{% static 'assets/js/.js' %}" ></script>
+{% endblock scripts %}
+

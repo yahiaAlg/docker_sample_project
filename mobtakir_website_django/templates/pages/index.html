@@ -1,0 +1,310 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block styles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/index.css' %}" />
+{% endblock styles %}
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero d-flex align-items-center" id="home">
+      <div class="particles" id="particles"></div>
+      <div class="container hero-content text-center">
+        <h1 class="display-2 fw-bold mb-4 text-white">
+          Unleash the Power of AI
+        </h1>
+        <p class="lead mb-4 text-white">One platform, endless possibilities</p>
+        <p class="mb-5 text-white">
+          Experience the future of AI-driven solutions for programming, image
+          manipulation, audio generation, and text processing.
+        </p>
+        <a href="./login.html" class="btn btn-primary btn-lg me-3"
+          >Get Started</a
+        >
+        <a href="#video" class="btn btn-outline-light btn-lg">Watch Demo</a>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-5" id="services">
+      <div class="container">
+        <h2 class="text-center mb-5 fade-in">Our Services</h2>
+        <div class="row g-4">
+          <div class="col-md-3">
+            <a class="no-link-style" href="./chatbot-interface.html">
+              <div class="services-card p-4 text-center fade-in">
+                <i class="fas fa-code service-icon mb-3"></i>
+                <h4>Programming Tasks</h4>
+                <p>
+                  Code debugging, documentation, and development assistance
+                  powered by AI.
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a class="no-link-style" href="./chatbot-interface.html">
+              <div class="services-card p-4 text-center fade-in">
+                <i class="fas fa-image service-icon mb-3"></i>
+                <h3>Image Magic</h3>
+                <p>
+                  Advanced image recognition and generation with customizable
+                  styles.
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a class="no-link-style" href="./chatbot-interface.html">
+              <div class="services-card p-4 text-center fade-in">
+                <i class="fas fa-volume-up service-icon mb-3"></i>
+                <h3>Audio Creation</h3>
+                <p>Sound effect generation and natural speech synthesis.</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a class="no-link-style" href="./chatbot-interface.html">
+              <div class="services-card p-4 text-center fade-in">
+                <i class="fas fa-text-height service-icon mb-3"></i>
+                <h3>Text Processing</h3>
+                <p>
+                  Chat, translation, and intelligent question-answering
+                  capabilities.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video" id="video">
+      <div class="container">
+        <div class="video-content">
+          <h2 class="section-title">See Mobtakir in Action</h2>
+          <div class="video-container">
+            <div class="video-wrapper">
+              <!-- Replace with actual video player -->
+              <div class="video-placeholder">
+                <i class="fas fa-play-circle"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add remaining sections similarly -->
+    <!-- How It Works Section -->
+    <section class="py-5 bg-light" id="how-it-works">
+      <div class="container">
+        <h2 class="text-center mb-5 fade-in">How It Works</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="step-card fade-in">
+              <div class="step-number">1</div>
+              <h4>Choose your task</h4>
+              <p>
+                Select from our wide range of AI-powered services and tools.
+              </p>
+              <i class="fas fa-tasks fs-2 text-primary"></i>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="step-card fade-in">
+              <div class="step-number">2</div>
+              <h4>Provide input</h4>
+              <p>Share your requirements or upload necessary files.</p>
+              <i class="fas fa-upload fs-2 text-primary"></i>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="step-card fade-in">
+              <div class="step-number">3</div>
+              <h4>Get results</h4>
+              <p>Receive AI-generated results in seconds.</p>
+              <i class="fas fa-magic fs-2 text-primary"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5" id="testimonials">
+      <div class="container">
+        <h2 class="text-center mb-5 fade-in">What Our Users Say</h2>
+        <div
+          id="testimonialCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="testimonial-card text-center">
+                <div class="testimonial-avatar">
+                  <i class="fas fa-user fs-2"></i>
+                </div>
+                <p class="lead mb-3">
+                  "Mobtakir has revolutionized our development workflow. The
+                  code generation and debugging features are simply amazing!"
+                </p>
+                <h5>John Doe</h5>
+                <p class="text-muted">Senior Developer, Tech Corp</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="testimonial-card text-center">
+                <div class="testimonial-avatar">
+                  <i class="fas fa-user fs-2"></i>
+                </div>
+                <p class="lead mb-3">
+                  "The image generation capabilities are incredible. We've saved
+                  countless hours on design work."
+                </p>
+                <h5>Jane Smith</h5>
+                <p class="text-muted">Creative Director, Design Studio</p>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-5 bg-light" id="pricing">
+      <div class="container">
+        <h2 class="text-center mb-5 fade-in">Choose Your Plan</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="pricing-card card h-100 fade-in">
+              <div class="card-body text-center">
+                <h3 class="card-title">Basic</h3>
+                <div class="display-4 my-4">
+                  $29<small class="fs-5">/mo</small>
+                </div>
+                <ul class="list-unstyled">
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>5 AI Tasks/day
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>Basic Code
+                    Generation
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>Standard
+                    Support
+                  </li>
+                </ul>
+                <a
+                  href="./pricings.html"
+                  class="btn btn-outline-primary btn-lg mt-3"
+                >
+                  Choose Plan
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pricing-card card h-100 featured fade-in">
+              <div class="pricing-badge">Popular</div>
+              <div class="card-body text-center">
+                <h3 class="card-title">Pro</h3>
+                <div class="display-4 my-4">
+                  $99<small class="fs-5">/mo</small>
+                </div>
+                <ul class="list-unstyled">
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>Unlimited AI
+                    Tasks
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>Advanced Code
+                    Generation
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>Priority
+                    Support
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>Custom
+                    Solutions
+                  </li>
+                </ul>
+                <a href="./pricings.html" class="btn btn-primary btn-lg mt-3"
+                  >Choose Plan</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pricing-card card h-100 fade-in">
+              <div class="card-body text-center">
+                <h3 class="card-title">Enterprise</h3>
+                <div class="display-4 my-4">Custom</div>
+                <ul class="list-unstyled">
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>Custom
+                    Solutions
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>Dedicated
+                    Support
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>API Access
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-check text-success me-2"></i>Custom
+                    Integration
+                  </li>
+                </ul>
+                <a
+                  href="./pricings.html"
+                  class="btn btn-outline-primary btn-lg mt-3"
+                >
+                  Contact Sales
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container text-center">
+        <h2 class="display-4 mb-4 fade-in">
+          Ready to Revolutionize Your Workflow?
+        </h2>
+        <p class="lead mb-5 fade-in">Join thousands of satisfied users today</p>
+        <a href="./login.html" class="btn btn-light btn-lg fade-in"
+          >Get Started Now</a
+        >
+      </div>
+    </section>
+{% endblock content %}
+{% block scripts %}
+        <script  type="text/javascript" src="{% static 'assets/js/index.js' %}" ></script>
+{% endblock scripts %}
+
