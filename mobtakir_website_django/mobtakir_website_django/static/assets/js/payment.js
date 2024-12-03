@@ -1,3 +1,4 @@
+
 // Payment method selection
 document.querySelectorAll(".payment-method").forEach((method) => {
   method.addEventListener("click", () => {
@@ -12,7 +13,9 @@ document.querySelectorAll(".payment-method").forEach((method) => {
 document
   .querySelector('input[placeholder="1234 5678 9012 3456"]')
   .addEventListener("input", function (e) {
-    let value = e.target.value.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
+    let value = e.target.value
+      .replace(/\s+/g, "")
+      .replace(/[^0-9]/gi, "");
     let formattedValue = "";
     for (let i = 0; i < value.length; i++) {
       if (i > 0 && i % 4 === 0) {

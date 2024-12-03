@@ -1,3 +1,9 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+  min-height: 100vh;
+}
 .pricing-hero {
   background: linear-gradient(
     135deg,

@@ -5,7 +5,110 @@
         <link rel="stylesheet" type="text/css" href="{% static 'assets/css/.css' %}" />
 {% endblock styles %}
 {% block content %}
+    <!-- About Page Content -->
+    <div class="about-page">
+      <!-- Hero Section -->
+      <section class="py-5 bg-light mt-5">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <h1 class="display-4 mb-4">Our Story</h1>
+              <p class="lead">
+                Pioneering the future of AI-powered solutions since 2020
+              </p>
+              <p>
+                At Mobtakir, we believe in harnessing the power of artificial
+                intelligence to solve real-world problems and enhance human
+                capabilities. Our journey began with a simple idea: make AI
+                accessible to everyone.
+              </p>
+            </div>
+            <div class="col-md-6">
+              <div class="text-center">
+                <i class="fas fa-robot display-1 text-primary"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <!-- Mission & Values -->
+      <section class="py-5">
+        <div class="container">
+          <h2 class="text-center mb-5">Our Mission & Values</h2>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card h-100">
+                <div class="card-body text-center">
+                  <i class="fas fa-bullseye fs-1 text-primary mb-3"></i>
+                  <h4>Mission</h4>
+                  <p>
+                    To democratize AI technology and empower individuals and
+                    businesses to achieve more.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100">
+                <div class="card-body text-center">
+                  <i class="fas fa-star fs-1 text-primary mb-3"></i>
+                  <h4>Vision</h4>
+                  <p>
+                    To be the leading platform for AI-powered solutions that
+                    drive innovation and growth.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100">
+                <div class="card-body text-center">
+                  <i class="fas fa-heart fs-1 text-primary mb-3"></i>
+                  <h4>Values</h4>
+                  <p>
+                    Innovation, Integrity, Excellence, and Customer Success
+                    drive everything we do.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section class="py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center mb-5">Meet Our Team</h2>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="team-member-card card text-center">
+                <div class="card-body">
+                  <div class="mb-3">
+                    <i class="fas fa-user-circle display-1 text-primary"></i>
+                  </div>
+                  <h4>John Smith</h4>
+                  <p class="text-muted">CEO & Founder</p>
+                  <p>
+                    Visionary leader with 15+ years in AI and machine learning.
+                  </p>
+                  <div class="social-icons">
+                    <a href="#" class="text-primary mx-2"
+                      ><i class="fab fa-linkedin"></i
+                    ></a>
+                    <a href="#" class="text-primary mx-2"
+                      ><i class="fab fa-twitter"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Add more team members similarly -->
+          </div>
+        </div>
+      </section>
+    </div>
 {% endblock content %}
 {% block scripts %}
     <script  type="text/javascript" src="{% static 'assets/js/.js' %}" ></script>

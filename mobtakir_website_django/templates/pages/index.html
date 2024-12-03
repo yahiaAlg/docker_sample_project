@@ -17,7 +17,7 @@
           Experience the future of AI-driven solutions for programming, image
           manipulation, audio generation, and text processing.
         </p>
-        <a href="./login.html" class="btn btn-primary btn-lg me-3"
+        <a href="{% url "accounts:login" %}" class="btn btn-primary btn-lg me-3"
           >Get Started</a
         >
         <a href="#video" class="btn btn-outline-light btn-lg">Watch Demo</a>
@@ -30,7 +30,7 @@
         <h2 class="text-center mb-5 fade-in">Our Services</h2>
         <div class="row g-4">
           <div class="col-md-3">
-            <a class="no-link-style" href="./chatbot-interface.html">
+            <a class="no-link-style" href="{% url "chatbot:chat_interface" %}">
               <div class="services-card p-4 text-center fade-in">
                 <i class="fas fa-code service-icon mb-3"></i>
                 <h4>Programming Tasks</h4>
@@ -42,7 +42,7 @@
             </a>
           </div>
           <div class="col-md-3">
-            <a class="no-link-style" href="./chatbot-interface.html">
+            <a class="no-link-style" href="{% url "chatbot:chat_interface" %}">
               <div class="services-card p-4 text-center fade-in">
                 <i class="fas fa-image service-icon mb-3"></i>
                 <h3>Image Magic</h3>
@@ -54,7 +54,7 @@
             </a>
           </div>
           <div class="col-md-3">
-            <a class="no-link-style" href="./chatbot-interface.html">
+            <a class="no-link-style" href="{% url "chatbot:chat_interface" %}">
               <div class="services-card p-4 text-center fade-in">
                 <i class="fas fa-volume-up service-icon mb-3"></i>
                 <h3>Audio Creation</h3>
@@ -63,7 +63,7 @@
             </a>
           </div>
           <div class="col-md-3">
-            <a class="no-link-style" href="./chatbot-interface.html">
+            <a class="no-link-style" href="{% url "chatbot:chat_interface" %}">
               <div class="services-card p-4 text-center fade-in">
                 <i class="fas fa-text-height service-icon mb-3"></i>
                 <h3>Text Processing</h3>
@@ -216,7 +216,7 @@
                   </li>
                 </ul>
                 <a
-                  href="./pricings.html"
+                  href="{% url "pages:pricings" %}"
                   class="btn btn-outline-primary btn-lg mt-3"
                 >
                   Choose Plan
@@ -250,7 +250,7 @@
                     Solutions
                   </li>
                 </ul>
-                <a href="./pricings.html" class="btn btn-primary btn-lg mt-3"
+                <a href="{% url "pages:pricings" %}" class="btn btn-primary btn-lg mt-3"
                   >Choose Plan</a
                 >
               </div>
@@ -279,7 +279,7 @@
                   </li>
                 </ul>
                 <a
-                  href="./pricings.html"
+                  href="{% url "pages:pricings" %}"
                   class="btn btn-outline-primary btn-lg mt-3"
                 >
                   Contact Sales
@@ -298,7 +298,7 @@
           Ready to Revolutionize Your Workflow?
         </h2>
         <p class="lead mb-5 fade-in">Join thousands of satisfied users today</p>
-        <a href="./login.html" class="btn btn-light btn-lg fade-in"
+        <a href="{% url "accounts:login" %}" class="btn btn-light btn-lg fade-in"
           >Get Started Now</a
         >
       </div>

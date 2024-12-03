@@ -1,90 +1,127 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}{% endblock title %}
+{% block title %}pricings{% endblock title %}
 {% block styles %}
-        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/pricings.css' %}" />
 {% endblock styles %}
 {% block content %}
-    <!-- Pricing Header -->
-    <header class="pricing-header">
+    <!-- Pricing Hero Section -->
+    <section class="pricing-hero">
       <div class="container text-center">
         <h1 class="display-4 mb-4">Choose Your Plan</h1>
-        <p class="lead">Flexible pricing options to meet your learning needs</p>
+        <p class="lead mb-4">
+          Select the perfect plan for your AI learning journey
+        </p>
+        <div class="pricing-switch">
+          <button class="active">Monthly</button>
+          <button>Annual</button>
+        </div>
       </div>
-    </header>
+    </section>
 
-    <!-- Pricing Plans -->
+    <!-- Pricing Cards -->
     <section class="py-5">
       <div class="container">
-        <div class="row">
+        <div class="row g-4">
           <!-- Basic Plan -->
-          <div class="col-lg-4 mb-4">
-            <div class="card pricing-card h-100">
-              <div class="card-body text-center">
-                <h3 class="card-title">Basic</h3>
-                <div class="price mb-4">$29</div>
-                <p class="text-muted">Perfect for beginners</p>
-                <ul class="feature-list text-start">
-                  <li><i class="fas fa-check"></i> Access to basic courses</li>
-                  <li><i class="fas fa-check"></i> Community support</li>
-                  <li><i class="fas fa-check"></i> Monthly webinars</li>
+          <div class="col-lg-4">
+            <div class="pricing-card card">
+              <div class="card-body p-5">
+                <h3 class="mb-4">Basic</h3>
+                <div class="price mb-4">
+                  $29 <span class="price-period">/month</span>
+                </div>
+                <p class="text-muted mb-4">
+                  Perfect for beginners starting their AI journey
+                </p>
+                <ul class="feature-list mb-5">
+                  <li>
+                    <i class="fas fa-check-circle"></i> Access to basic courses
+                  </li>
+                  <li><i class="fas fa-check-circle"></i> Community support</li>
+                  <li><i class="fas fa-check-circle"></i> Monthly webinars</li>
+                  <li><i class="fas fa-check-circle"></i> Basic AI tools</li>
                   <li class="text-muted">
-                    <i class="fas fa-times"></i> Premium workshops
+                    <i class="fas fa-times-circle"></i> Advanced projects
                   </li>
                   <li class="text-muted">
-                    <i class="fas fa-times"></i> 1-on-1 mentoring
+                    <i class="fas fa-times-circle"></i> 1-on-1 mentoring
                   </li>
                 </ul>
-                <button class="btn btn-outline-primary btn-lg mt-4 w-100">
-                  Select Plan
-                </button>
+                <a
+                  href="{% url "pages:payment" %}"
+                  class="btn btn-outline-subscribe w-100"
+                >
+                  Get Started
+                </a>
               </div>
             </div>
           </div>
 
           <!-- Pro Plan -->
-          <div class="col-lg-4 mb-4">
-            <div class="card pricing-card popular h-100">
+          <div class="col-lg-4">
+            <div class="pricing-card card popular">
               <div class="popular-badge">Popular</div>
-              <div class="card-body text-center">
-                <h3 class="card-title">Pro</h3>
-                <div class="price mb-4">$79</div>
-                <p class="text-muted">For serious learners</p>
-                <ul class="feature-list text-start">
-                  <li><i class="fas fa-check"></i> All Basic features</li>
-                  <li><i class="fas fa-check"></i> Premium workshops</li>
-                  <li><i class="fas fa-check"></i> Priority support</li>
-                  <li><i class="fas fa-check"></i> Industry projects</li>
+              <div class="card-body p-5">
+                <h3 class="mb-4">Pro</h3>
+                <div class="price mb-4">
+                  $79 <span class="price-period">/month</span>
+                </div>
+                <p class="text-muted mb-4">
+                  Most popular choice for serious learners
+                </p>
+                <ul class="feature-list mb-5">
+                  <li>
+                    <i class="fas fa-check-circle"></i> All Basic features
+                  </li>
+                  <li><i class="fas fa-check-circle"></i> Advanced courses</li>
+                  <li><i class="fas fa-check-circle"></i> Priority support</li>
+                  <li><i class="fas fa-check-circle"></i> Advanced AI tools</li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Real-world projects
+                  </li>
                   <li class="text-muted">
-                    <i class="fas fa-times"></i> 1-on-1 mentoring
+                    <i class="fas fa-times-circle"></i> 1-on-1 mentoring
                   </li>
                 </ul>
-                <button class="btn btn-primary btn-lg mt-4 w-100">
-                  Select Plan
-                </button>
+                <a href="{% url "pages:payment" %}" class="btn btn-subscribe w-100"
+                  >Get Started</a
+                >
               </div>
             </div>
           </div>
 
           <!-- Enterprise Plan -->
-          <div class="col-lg-4 mb-4">
-            <div class="card pricing-card h-100">
-              <div class="card-body text-center">
-                <h3 class="card-title">Enterprise</h3>
-                <div class="price mb-4">$199</div>
-                <p class="text-muted">Complete learning experience</p>
-                <ul class="feature-list text-start">
-                  <li><i class="fas fa-check"></i> All Pro features</li>
-                  <li><i class="fas fa-check"></i> 1-on-1 mentoring</li>
-                  <li><i class="fas fa-check"></i> Custom learning path</li>
-                  <li><i class="fas fa-check"></i> Career guidance</li>
+          <div class="col-lg-4">
+            <div class="pricing-card card">
+              <div class="card-body p-5">
+                <h3 class="mb-4">Enterprise</h3>
+                <div class="price mb-4">
+                  $199 <span class="price-period">/month</span>
+                </div>
+                <p class="text-muted mb-4">
+                  Complete solution for professionals
+                </p>
+                <ul class="feature-list mb-5">
+                  <li><i class="fas fa-check-circle"></i> All Pro features</li>
                   <li>
-                    <i class="fas fa-check"></i> Certificate of completion
+                    <i class="fas fa-check-circle"></i> Custom learning path
                   </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> 24/7 premium support
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Enterprise AI tools
+                  </li>
+                  <li><i class="fas fa-check-circle"></i> Custom projects</li>
+                  <li><i class="fas fa-check-circle"></i> 1-on-1 mentoring</li>
                 </ul>
-                <button class="btn btn-outline-primary btn-lg mt-4 w-100">
-                  Select Plan
-                </button>
+                <a
+                  href="{% url "pages:payment" %}"
+                  class="btn btn-outline-subscribe w-100"
+                >
+                  Get Started
+                </a>
               </div>
             </div>
           </div>
@@ -92,150 +129,92 @@
       </div>
     </section>
 
-    <!-- Payment Section -->
-    <section class="py-5 bg-white">
+    <!-- Money Back Guarantee -->
+    <section class="py-5 bg-light">
       <div class="container">
-        <div class="row">
+        <div class="guarantee-box">
+          <i class="fas fa-shield-alt guarantee-icon"></i>
+          <h3 class="mb-3">30-Day Money Back Guarantee</h3>
+          <p class="text-muted mb-0">
+            Not satisfied with our service? Get a full refund within 30 days, no
+            questions asked.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="container">
+        <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+        <div class="row justify-content-center">
           <div class="col-lg-8">
-            <h2 class="mb-4">Payment Details</h2>
-
-            <!-- Payment Methods -->
-            <div class="mb-4">
-              <h5 class="mb-3">Select Payment Method</h5>
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <div class="payment-method selected">
-                    <div class="d-flex align-items-center">
-                      <img
-                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='40'%3E%3Crect width='100' height='40' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='12' fill='%23666'%3ECredit Card%3C/text%3E%3C/svg%3E"
-                        alt="Credit Card"
-                        class="me-3"
-                      />
-                      <span>Credit Card</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <div class="payment-method">
-                    <div class="d-flex align-items-center">
-                      <img
-                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='40'%3E%3Crect width='100' height='40' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='12' fill='%23666'%3EPayPal%3C/text%3E%3C/svg%3E"
-                        alt="PayPal"
-                        class="me-3"
-                      />
-                      <span>PayPal</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Credit Card Form -->
-            <div class="payment-form">
-              <form>
-                <div class="mb-3">
-                  <label class="form-label">Card Number</label>
-                  <div class="card-element">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="1234 5678 9012 3456"
-                    />
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <label class="form-label">Expiry Date</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="MM/YY"
-                    />
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label class="form-label">CVV</label>
-                    <input type="text" class="form-control" placeholder="123" />
-                  </div>
-                </div>
-                <div class="mb-4">
-                  <label class="form-label">Name on Card</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="John Doe"
-                  />
-                </div>
-                <div class="d-flex align-items-center justify-content-between">
-                  <span class="secure-badge">
-                    <i class="fas fa-lock"></i> Secure Payment
-                  </span>
-                  <button type="submit" class="btn btn-primary btn-lg">
-                    Pay Now
+            <div class="accordion" id="pricingFAQ">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faq1"
+                  >
+                    Can I switch plans later?
                   </button>
-                </div>
-              </form>
-            </div>
-
-            <!-- Cryptocurrency Options -->
-            <div class="mt-5">
-              <h5 class="mb-3">Alternative Payment Methods</h5>
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="crypto-option">
-                    <img
-                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='40' height='40' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='8' fill='%23666'%3EBitcoin%3C/text%3E%3C/svg%3E"
-                      alt="Bitcoin"
-                    />
-                    <div>Bitcoin</div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="crypto-option">
-                    <img
-                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='40' height='40' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='8' fill='%23666'%3EEthereum%3C/text%3E%3C/svg%3E"
-                      alt="Ethereum"
-                    />
-                    <div>Ethereum</div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="crypto-option">
-                    <img
-                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='40' height='40' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='8' fill='%23666'%3EUSDT%3C/text%3E%3C/svg%3E"
-                      alt="USDT"
-                    />
-                    <div>USDT</div>
+                </h2>
+                <div
+                  id="faq1"
+                  class="accordion-collapse collapse show"
+                  data-bs-parent="#pricingFAQ"
+                >
+                  <div class="accordion-body">
+                    Yes, you can upgrade or downgrade your plan at any time.
+                    Changes will be reflected in your next billing cycle.
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <!-- Order Summary -->
-          <div class="col-lg-4">
-            <div class="order-summary">
-              <h4 class="mb-4">Order Summary</h4>
-              <div class="summary-item">
-                <span>Pro Plan (Annual)</span>
-                <span>$79.00</span>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faq2"
+                  >
+                    What payment methods do you accept?
+                  </button>
+                </h2>
+                <div
+                  id="faq2"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#pricingFAQ"
+                >
+                  <div class="accordion-body">
+                    We accept all major credit cards, PayPal, and bank transfers
+                    for enterprise customers.
+                  </div>
+                </div>
               </div>
-              <div class="summary-item">
-                <span>Tax</span>
-                <span>$7.90</span>
-              </div>
-              <div class="summary-item summary-total">
-                <span>Total</span>
-                <span>$86.90</span>
-              </div>
-              <div class="mt-4">
-                <input
-                  type="text"
-                  class="form-control mb-3"
-                  placeholder="Promo Code"
-                />
-                <button class="btn btn-outline-primary w-100">
-                  Apply Code
-                </button>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faq3"
+                  >
+                    Is there a contract or commitment?
+                  </button>
+                </h2>
+                <div
+                  id="faq3"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#pricingFAQ"
+                >
+                  <div class="accordion-body">
+                    No, all our plans are subscription-based and you can cancel
+                    anytime without penalty.
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -244,6 +223,6 @@
     </section>
 {% endblock content %}
 {% block scripts %}
-    <script  type="text/javascript" src="{% static 'assets/js/.js' %}" ></script>
+    <script  type="text/javascript" src="{% static 'assets/js/pricings.js' %}" ></script>
 {% endblock scripts %}
 
