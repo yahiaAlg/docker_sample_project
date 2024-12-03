@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: gunicorn mobtakir_website_django.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - .:/app
+      - static_volume:/app/static
+      - media_volume:/app/media
+    ports:
+      - "8094:8000"
+    environment:
+      - DJANGO_SETTINGS_MODULE=mobtakir_website_django.settings
+    restart: always
+
+  nginx:
+    image: nginx:1.21-alpine
+    volumes:
+      - static_volume:/app/static
+      - media_volume:/app/media
+      - ./nginx:/etc/nginx/conf.d
+    ports:
+      - "80:80"
+    depends_on:
+      - web
+
+volumes:
+  static_volume:
+  media_volume:
