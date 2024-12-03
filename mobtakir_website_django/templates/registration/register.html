@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}register{% endblock title %}
+{% block styles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/register.css' %}" />
+{% endblock styles %}
+{% block content %}
+    <!-- Sign Up Page -->
+    <div class="container auth-container" id="signup">
+      <div class="row">
+        <div class="col-md-10 col-lg-8 mx-auto">
+          <div class="auth-card">
+            <div class="row g-0">
+              <div class="col-md-5 auth-sidebar">
+                <h2 class="mb-4">Join Mobtakir</h2>
+                <p>
+                  Create your account and start exploring the endless
+                  possibilities of AI technology.
+                </p>
+                <div class="mt-4">
+                  <i class="fas fa-rocket fa-4x"></i>
+                </div>
+              </div>
+              <div class="col-md-7 auth-form">
+                <h3 class="mb-4">Sign Up</h3>
+                <form id="signupForm">
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">First Name</label>
+                      <input type="text" class="form-control" required />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">Last Name</label>
+                      <input type="text" class="form-control" required />
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" required />
+                  </div>
+                  <div class="mb-3 position-relative">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" required />
+                    <i class="fas fa-eye password-toggle"></i>
+                  </div>
+                  <div class="mb-3 position-relative">
+                    <label class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" required />
+                    <i class="fas fa-eye password-toggle"></i>
+                  </div>
+                  <div class="mb-3">
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="terms"
+                        required
+                      />
+                      <label class="form-check-label" for="terms">
+                        I agree to the <a href="#">Terms of Service</a> and
+                        <a href="#">Privacy Policy</a>
+                      </label>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-auth">
+                    Create Account
+                  </button>
+
+                  <div class="divider">
+                    <span>or sign up with</span>
+                  </div>
+
+                  <div class="social-login">
+                    <div class="social-btn">
+                      <i class="fab fa-google"></i>
+                      <span>Google</span>
+                    </div>
+                    <div class="social-btn">
+                      <i class="fab fa-github"></i>
+                      <span>GitHub</span>
+                    </div>
+                  </div>
+
+                  <div class="auth-switch">
+                    Already have an account? <a href="./login.html">Sign In</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock content %}
+{% block scripts %}
+    <script  type="text/javascript" src="{% static 'assets/js/register.js' %}" ></script>
+{% endblock scripts %}
+

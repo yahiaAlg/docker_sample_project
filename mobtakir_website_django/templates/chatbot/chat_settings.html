@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}parameters{% endblock title %}
+{% block styles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/chat_settings.css' %}" />
+{% endblock styles %}
+{% block content %}
+    <div class="parameters-container">
+      <h2 class="section-header">
+        <i class="fas fa-cog"></i> Chatbot Parameters
+      </h2>
+
+      <!-- Language and Model Settings -->
+      <div class="parameter-group">
+        <h4>Language & Model Settings</h4>
+        <div class="parameter-item">
+          <div class="parameter-label">
+            Language Model
+            <span class="tooltip">
+              <i class="fas fa-info-circle info-icon"></i>
+              <span class="tooltiptext"
+                >Select the AI model that powers your chatbot</span
+              >
+            </span>
+          </div>
+          <select class="parameter-input">
+            <option value="gpt4">GPT-4</option>
+            <option value="gpt3">GPT-3.5</option>
+            <option value="claude">Claude</option>
+          </select>
+        </div>
+        <div class="parameter-item">
+          <div class="parameter-label">
+            Primary Language
+            <span class="tooltip">
+              <i class="fas fa-info-circle info-icon"></i>
+              <span class="tooltiptext"
+                >Default language for the chatbot responses</span
+              >
+            </span>
+          </div>
+          <select class="parameter-input">
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Response Settings -->
+      <div class="parameter-group">
+        <h4>Response Settings</h4>
+        <div class="parameter-item">
+          <div class="parameter-label">
+            Temperature
+            <span class="tooltip">
+              <i class="fas fa-info-circle info-icon"></i>
+              <span class="tooltiptext"
+                >Controls randomness in responses (0 = deterministic, 1 =
+                creative)</span
+              >
+            </span>
+          </div>
+          <div class="slider-container">
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.1"
+              value="0.7"
+              class="slider"
+              id="temperatureSlider"
+            />
+            <span class="slider-value" id="temperatureValue">0.7</span>
+          </div>
+        </div>
+        <div class="parameter-item">
+          <div class="parameter-label">
+            Maximum Response Length
+            <span class="tooltip">
+              <i class="fas fa-info-circle info-icon"></i>
+              <span class="tooltiptext"
+                >Maximum number of tokens in the response</span
+              >
+            </span>
+          </div>
+          <div class="slider-container">
+            <input
+              type="range"
+              min="50"
+              max="2000"
+              step="50"
+              value="500"
+              class="slider"
+              id="lengthSlider"
+            />
+            <span class="slider-value" id="lengthValue">500</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Behavior Settings -->
+      <div class="parameter-group">
+        <h4>Behavior Settings</h4>
+        <div class="parameter-item">
+          <div class="parameter-label">
+            Context Memory
+            <span class="tooltip">
+              <i class="fas fa-info-circle info-icon"></i>
+              <span class="tooltiptext"
+                >Number of previous messages to maintain in context</span
+              >
+            </span>
+          </div>
+          <div class="slider-container">
+            <input
+              type="range"
+              min="1"
+              max="20"
+              value="5"
+              class="slider"
+              id="contextSlider"
+            />
+            <span class="slider-value" id="contextValue">5</span>
+          </div>
+        </div>
+        <div class="parameter-item">
+          <div class="parameter-label">
+            Auto-Correct
+            <span class="tooltip">
+              <i class="fas fa-info-circle info-icon"></i>
+              <span class="tooltiptext"
+                >Automatically correct spelling and grammar in user inputs</span
+              >
+            </span>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" checked />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- API Settings -->
+      <div class="parameter-group">
+        <h4>API Settings</h4>
+        <div class="parameter-item">
+          <div class="parameter-label">
+            API Key
+            <span class="tooltip">
+              <i class="fas fa-info-circle info-icon"></i>
+              <span class="tooltiptext"
+                >Your API key for accessing the language model</span
+              >
+            </span>
+          </div>
+          <input
+            type="password"
+            class="parameter-input"
+            placeholder="Enter API Key"
+          />
+        </div>
+        <div class="parameter-item">
+          <div class="parameter-label">
+            Endpoint URL
+            <span class="tooltip">
+              <i class="fas fa-info-circle info-icon"></i>
+              <span class="tooltiptext"
+                >API endpoint URL for the language model</span
+              >
+            </span>
+          </div>
+          <input
+            type="text"
+            class="parameter-input"
+            placeholder="https://api.example.com/v1"
+          />
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button class="btn btn-outline">Reset to Defaults</button>
+        <button class="btn btn-primary">Save Changes</button>
+      </div>
+    </div>
+{% endblock content %}
+{% block scripts %}
+    <script  type="text/javascript" src="{% static 'assets/js/chat_settings.js' %}" ></script>
+{% endblock scripts %}
+

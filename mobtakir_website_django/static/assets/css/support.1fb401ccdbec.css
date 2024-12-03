@@ -1,0 +1,117 @@
+.hero-support {
+  background: linear-gradient(
+    135deg,
+    var(--electric-purple),
+    var(--accent-color)
+  );
+  padding: 100px 0 50px;
+  color: white;
+}
+
+.search-box {
+  background: white;
+  border-radius: 50px;
+  padding: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.search-btn {
+  background: var(--electric-purple);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 30px;
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  background: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.category-card {
+  border: none;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 1.5rem;
+  background: #f8f9fa;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  background: #f1f3f5;
+}
+
+.faq-answer {
+  padding: 1.5rem;
+  display: none;
+}
+
+.contact-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.support-card {
+  border: none;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.support-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.chat-button {
+  background: var(--electric-purple);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.chat-button:hover {
+  transform: scale(1.1);
+  background: var(--accent-color);
+}

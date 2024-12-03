@@ -6,7 +6,243 @@
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/.css' %}" />
 {% endblock styles %}
 {% block content %}
+    <!-- Pricing Header -->
+    <header class="pricing-header">
+      <div class="container text-center">
+        <h1 class="display-4 mb-4">Choose Your Plan</h1>
+        <p class="lead">Flexible pricing options to meet your learning needs</p>
+      </div>
+    </header>
 
+    <!-- Pricing Plans -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row">
+          <!-- Basic Plan -->
+          <div class="col-lg-4 mb-4">
+            <div class="card pricing-card h-100">
+              <div class="card-body text-center">
+                <h3 class="card-title">Basic</h3>
+                <div class="price mb-4">$29</div>
+                <p class="text-muted">Perfect for beginners</p>
+                <ul class="feature-list text-start">
+                  <li><i class="fas fa-check"></i> Access to basic courses</li>
+                  <li><i class="fas fa-check"></i> Community support</li>
+                  <li><i class="fas fa-check"></i> Monthly webinars</li>
+                  <li class="text-muted">
+                    <i class="fas fa-times"></i> Premium workshops
+                  </li>
+                  <li class="text-muted">
+                    <i class="fas fa-times"></i> 1-on-1 mentoring
+                  </li>
+                </ul>
+                <button class="btn btn-outline-primary btn-lg mt-4 w-100">
+                  Select Plan
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pro Plan -->
+          <div class="col-lg-4 mb-4">
+            <div class="card pricing-card popular h-100">
+              <div class="popular-badge">Popular</div>
+              <div class="card-body text-center">
+                <h3 class="card-title">Pro</h3>
+                <div class="price mb-4">$79</div>
+                <p class="text-muted">For serious learners</p>
+                <ul class="feature-list text-start">
+                  <li><i class="fas fa-check"></i> All Basic features</li>
+                  <li><i class="fas fa-check"></i> Premium workshops</li>
+                  <li><i class="fas fa-check"></i> Priority support</li>
+                  <li><i class="fas fa-check"></i> Industry projects</li>
+                  <li class="text-muted">
+                    <i class="fas fa-times"></i> 1-on-1 mentoring
+                  </li>
+                </ul>
+                <button class="btn btn-primary btn-lg mt-4 w-100">
+                  Select Plan
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div class="col-lg-4 mb-4">
+            <div class="card pricing-card h-100">
+              <div class="card-body text-center">
+                <h3 class="card-title">Enterprise</h3>
+                <div class="price mb-4">$199</div>
+                <p class="text-muted">Complete learning experience</p>
+                <ul class="feature-list text-start">
+                  <li><i class="fas fa-check"></i> All Pro features</li>
+                  <li><i class="fas fa-check"></i> 1-on-1 mentoring</li>
+                  <li><i class="fas fa-check"></i> Custom learning path</li>
+                  <li><i class="fas fa-check"></i> Career guidance</li>
+                  <li>
+                    <i class="fas fa-check"></i> Certificate of completion
+                  </li>
+                </ul>
+                <button class="btn btn-outline-primary btn-lg mt-4 w-100">
+                  Select Plan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <h2 class="mb-4">Payment Details</h2>
+
+            <!-- Payment Methods -->
+            <div class="mb-4">
+              <h5 class="mb-3">Select Payment Method</h5>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <div class="payment-method selected">
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='40'%3E%3Crect width='100' height='40' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='12' fill='%23666'%3ECredit Card%3C/text%3E%3C/svg%3E"
+                        alt="Credit Card"
+                        class="me-3"
+                      />
+                      <span>Credit Card</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="payment-method">
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='40'%3E%3Crect width='100' height='40' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='12' fill='%23666'%3EPayPal%3C/text%3E%3C/svg%3E"
+                        alt="PayPal"
+                        class="me-3"
+                      />
+                      <span>PayPal</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Credit Card Form -->
+            <div class="payment-form">
+              <form>
+                <div class="mb-3">
+                  <label class="form-label">Card Number</label>
+                  <div class="card-element">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="1234 5678 9012 3456"
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Expiry Date</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="MM/YY"
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">CVV</label>
+                    <input type="text" class="form-control" placeholder="123" />
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <label class="form-label">Name on Card</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="John Doe"
+                  />
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                  <span class="secure-badge">
+                    <i class="fas fa-lock"></i> Secure Payment
+                  </span>
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    Pay Now
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Cryptocurrency Options -->
+            <div class="mt-5">
+              <h5 class="mb-3">Alternative Payment Methods</h5>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="crypto-option">
+                    <img
+                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='40' height='40' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='8' fill='%23666'%3EBitcoin%3C/text%3E%3C/svg%3E"
+                      alt="Bitcoin"
+                    />
+                    <div>Bitcoin</div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="crypto-option">
+                    <img
+                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='40' height='40' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='8' fill='%23666'%3EEthereum%3C/text%3E%3C/svg%3E"
+                      alt="Ethereum"
+                    />
+                    <div>Ethereum</div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="crypto-option">
+                    <img
+                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='40' height='40' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='8' fill='%23666'%3EUSDT%3C/text%3E%3C/svg%3E"
+                      alt="USDT"
+                    />
+                    <div>USDT</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Summary -->
+          <div class="col-lg-4">
+            <div class="order-summary">
+              <h4 class="mb-4">Order Summary</h4>
+              <div class="summary-item">
+                <span>Pro Plan (Annual)</span>
+                <span>$79.00</span>
+              </div>
+              <div class="summary-item">
+                <span>Tax</span>
+                <span>$7.90</span>
+              </div>
+              <div class="summary-item summary-total">
+                <span>Total</span>
+                <span>$86.90</span>
+              </div>
+              <div class="mt-4">
+                <input
+                  type="text"
+                  class="form-control mb-3"
+                  placeholder="Promo Code"
+                />
+                <button class="btn btn-outline-primary w-100">
+                  Apply Code
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 {% endblock content %}
 {% block scripts %}
     <script  type="text/javascript" src="{% static 'assets/js/.js' %}" ></script>  

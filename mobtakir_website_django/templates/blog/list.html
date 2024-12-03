@@ -1,13 +1,321 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}{% endblock title %}
+{% block title %}Blog{% endblock title %}
 {% block styles %}
-        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/list.css' %}" />
 {% endblock styles %}
 {% block content %}
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 text-center">
+            <h1 class="display-4 mb-4">Mobtakir Blog</h1>
+            <p class="lead">
+              Insights, updates, and stories about AI technology and innovation
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Featured Post -->
+    <section class="py-5">
+      <div class="container">
+        <div class="featured-post">
+          <div
+            class="featured-image"
+            style="background-image: linear-gradient(45deg, #7b2cbf, #9d4edd)"
+          >
+            <div class="featured-content">
+              <span class="blog-tag">Featured</span>
+              <h2 class="h1 mb-3">The Future of AI in 2024 and Beyond</h2>
+              <p class="mb-3">
+                Explore the latest trends and predictions in artificial
+                intelligence that will shape our future.
+              </p>
+              <div class="blog-meta text-white">
+                <span><i class="fas fa-user"></i> John Smith</span>
+                <span class="ms-3"
+                  ><i class="fas fa-calendar"></i> March 15, 2024</span
+                >
+                <span class="ms-3"
+                  ><i class="fas fa-comments"></i> 24 Comments</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row">
+          <!-- Main Content -->
+          <div class="col-lg-8">
+            <div class="row g-4">
+              <!-- Blog Post 1 -->
+              <div class="col-md-6">
+                <div class="blog-card">
+                  <div
+                    class="blog-image"
+                    style="
+                      background-image: linear-gradient(
+                        45deg,
+                        #9d4edd,
+                        #7b2cbf
+                      );
+                    "
+                  ></div>
+                  <div class="card-body">
+                    <span class="blog-tag">Technology</span>
+                    <h3 class="h5 mb-3">
+                      Understanding Machine Learning Basics
+                    </h3>
+                    <p class="text-muted">
+                      A comprehensive guide to getting started with machine
+                      learning fundamentals.
+                    </p>
+                    <div class="blog-meta">
+                      <span><i class="fas fa-user"></i> Sarah Johnson</span>
+                      <span class="ms-3"
+                        ><i class="fas fa-calendar"></i> March 10, 2024</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Blog Post 2 -->
+              <div class="col-md-6">
+                <div class="blog-card">
+                  <div
+                    class="blog-image"
+                    style="
+                      background-image: linear-gradient(
+                        45deg,
+                        #9d4edd,
+                        #7b2cbf
+                      );
+                    "
+                  ></div>
+                  <div class="card-body">
+                    <span class="blog-tag">Innovation</span>
+                    <h3 class="h5 mb-3">AI in Healthcare: A Revolution</h3>
+                    <p class="text-muted">
+                      How artificial intelligence is transforming the healthcare
+                      industry.
+                    </p>
+                    <div class="blog-meta">
+                      <span><i class="fas fa-user"></i> Mike Davis</span>
+                      <span class="ms-3"
+                        ><i class="fas fa-calendar"></i> March 8, 2024</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- More Blog Posts -->
+              <div class="col-md-6">
+                <div class="blog-card">
+                  <div
+                    class="blog-image"
+                    style="
+                      background-image: linear-gradient(
+                        45deg,
+                        #9d4edd,
+                        #7b2cbf
+                      );
+                    "
+                  ></div>
+                  <div class="card-body">
+                    <span class="blog-tag">Research</span>
+                    <h3 class="h5 mb-3">Deep Learning Breakthroughs</h3>
+                    <p class="text-muted">
+                      Recent advances in deep learning and their implications.
+                    </p>
+                    <div class="blog-meta">
+                      <span><i class="fas fa-user"></i> Emily Chen</span>
+                      <span class="ms-3"
+                        ><i class="fas fa-calendar"></i> March 5, 2024</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="blog-card">
+                  <div
+                    class="blog-image"
+                    style="
+                      background-image: linear-gradient(
+                        45deg,
+                        #9d4edd,
+                        #7b2cbf
+                      );
+                    "
+                  ></div>
+                  <div class="card-body">
+                    <span class="blog-tag">Tutorial</span>
+                    <h3 class="h5 mb-3">Building Your First AI Model</h3>
+                    <p class="text-muted">
+                      Step-by-step guide to creating and training your first AI
+                      model.
+                    </p>
+                    <div class="blog-meta">
+                      <span><i class="fas fa-user"></i> Alex Turner</span>
+                      <span class="ms-3"
+                        ><i class="fas fa-calendar"></i> March 3, 2024</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <nav class="mt-5">
+              <ul class="pagination justify-content-center">
+                <li class="page-item">
+                  <a class="page-link" href="#"
+                    ><i class="fas fa-chevron-left"></i
+                  ></a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#"
+                    ><i class="fas fa-chevron-right"></i
+                  ></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4">
+            <!-- Search Widget -->
+            <div class="sidebar-widget">
+              <h4 class="mb-4">Search</h4>
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search posts..."
+                />
+                <button class="btn btn-primary">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Categories Widget -->
+            <div class="sidebar-widget">
+              <h4 class="mb-4">Categories</h4>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="#" class="text-decoration-none text-dark"
+                    >Technology (15)</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-decoration-none text-dark"
+                    >Innovation (8)</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-decoration-none text-dark"
+                    >Research (12)</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-decoration-none text-dark"
+                    >Tutorials (10)</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-decoration-none text-dark"
+                    >News (20)</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Popular Posts Widget -->
+            <div class="sidebar-widget">
+              <h4 class="mb-4">Popular Posts</h4>
+              <div class="popular-post">
+                <div
+                  style="
+                    width: 80px;
+                    height: 80px;
+                    background: linear-gradient(45deg, #7b2cbf, #9d4edd);
+                    border-radius: 10px;
+                  "
+                ></div>
+                <div>
+                  <h6 class="mb-1">The Rise of AI in Modern Business</h6>
+                  <small class="text-muted">March 1, 2024</small>
+                </div>
+              </div>
+              <div class="popular-post">
+                <div
+                  style="
+                    width: 80px;
+                    height: 80px;
+                    background: linear-gradient(45deg, #7b2cbf, #9d4edd);
+                    border-radius: 10px;
+                  "
+                ></div>
+                <div>
+                  <h6 class="mb-1">Machine Learning Best Practices</h6>
+                  <small class="text-muted">February 28, 2024</small>
+                </div>
+              </div>
+              <div class="popular-post">
+                <div
+                  style="
+                    width: 80px;
+                    height: 80px;
+                    background: linear-gradient(45deg, #7b2cbf, #9d4edd);
+                    border-radius: 10px;
+                  "
+                ></div>
+                <div>
+                  <h6 class="mb-1">AI Ethics and Responsibility</h6>
+                  <small class="text-muted">February 25, 2024</small>
+                </div>
+              </div>
+            </div>
+
+            <!-- Newsletter Widget -->
+            <div class="sidebar-widget">
+              <h4 class="mb-4">Newsletter</h4>
+              <p>Subscribe to our newsletter for the latest updates.</p>
+              <form class="newsletter-form">
+                <input
+                  type="email"
+                  class="form-control newsletter-input"
+                  placeholder="Enter your email"
+                />
+                <button type="submit" class="newsletter-button">
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 {% endblock content %}
 {% block scripts %}
-    <script  type="text/javascript" src="{% static 'assets/js/.js' %}" ></script>
+    <script  type="text/javascript" src="{% static 'assets/js/list.js' %}" ></script>
 {% endblock scripts %}
 

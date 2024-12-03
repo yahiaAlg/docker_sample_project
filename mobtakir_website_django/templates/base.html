@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 {% load django_bootstrap5 %}
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% bootstrap_css  %}
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
     {% block styles %}{% endblock styles %}
     <title>Mobtakir - Unleash the Power of AI - {% block title %} No Page title{% endblock title %}</title>
 </head>

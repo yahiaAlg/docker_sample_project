@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}chat-interface{% endblock title %}
+{% block styles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/chat_interface.css' %}" />
+{% endblock styles %}
+{% block content %}
+    <button class="mobile-menu-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="chat-container">
+      <!-- History Sidebar -->
+      <aside class="history-sidebar">
+        <div class="sidebar-header">
+          <button class="new-chat-btn">
+            <i class="fas fa-plus"></i> New Chat
+          </button>
+        </div>
+        <div class="chat-history">
+          <div class="history-item active">
+            <i class="fas fa-comment"></i>
+            Image Analysis Chat
+            <div class="message-time">2 min ago</div>
+          </div>
+          <div class="history-item">
+            <i class="fas fa-comment"></i>
+            Code Review Session
+            <div class="message-time">1 hour ago</div>
+          </div>
+          <!-- More history items -->
+        </div>
+      </aside>
+
+      <!-- Main Chat Area -->
+      <main class="main-chat">
+        <header class="chat-header">
+          <h4>Mobtakir Chat</h4>
+          <div class="header-actions">
+            <a href="./parameters.html" class="input-button">
+              <i class="fas fa-cog"></i>
+            </a>
+          </div>
+        </header>
+
+        <div class="chat-messages">
+          <div class="message bot-message">
+            Hello! I'm your AI assistant. I can help you with text, images,
+            code, and more.
+            <div class="message-time">12:00 PM</div>
+          </div>
+          <div class="message user-message">
+            Can you analyze this image for me?
+            <div class="message-time">12:01 PM</div>
+          </div>
+          <div class="typing-indicator">
+            <div class="typing-dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-input-area">
+          <div class="input-container">
+            <div class="text-input-area">
+              <div class="input-buttons">
+                <button class="input-button" title="Upload Image">
+                  <i class="fas fa-image"></i>
+                </button>
+                <button class="input-button" title="Upload File">
+                  <i class="fas fa-paperclip"></i>
+                </button>
+                <button class="input-button" title="Record Audio">
+                  <i class="fas fa-microphone"></i>
+                </button>
+                <button class="input-button" title="Code Snippet">
+                  <i class="fas fa-code"></i>
+                </button>
+              </div>
+              <textarea
+                class="text-input"
+                placeholder="Type your message..."
+                rows="1"
+              ></textarea>
+            </div>
+            <button class="send-button">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+          <div class="upload-preview">
+            <img class="preview-image" alt="Upload preview" />
+            <button class="input-button remove-upload">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- File Upload Modal -->
+    <div class="modal" id="uploadModal">
+      <div class="modal-content">
+        <h5>Upload File</h5>
+        <input type="file" accept="image/*,.pdf,.doc,.docx" multiple />
+        <button class="send-button">Upload</button>
+        <button class="input-button">Cancel</button>
+      </div>
+    </div>
+{% endblock content %}
+{% block scripts %}
+    <script  type="text/javascript" src="{% static 'assets/js/chat_interface.js' %}" ></script>
+{% endblock scripts %}
+

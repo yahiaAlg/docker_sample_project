@@ -1,13 +1,174 @@
-{% extends "base.html" %}
-{% load static %}
-{% block title %}{% endblock title %}
-{% block styles %}
-        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/.css' %}" />
-{% endblock styles %}
-{% block content %}
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %}api-documentation{%endblock title %} {% block styles %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'assets/css/api_documentation.css' %}"
+/>
+{% endblock styles %} {% block content %}
+    <button class="mobile-menu-toggle">
+    <i class="fas fa-bars"></i>
+    </button>
 
-{% endblock content %}
+    <!-- Main Content -->
+    <main class="api-content">
+      <!-- Introduction Section -->
+      <section id="introduction" class="api-section">
+        <h2>Introduction</h2>
+        <p>
+          Welcome to the Mobtakir API. Our API allows you to integrate AI
+          learning capabilities directly into your applications.
+        </p>
+        <div class="api-key-section">
+          <h5>Base URL</h5>
+          <code>https://api.aimaster.com/v1</code>
+        </div>
+      </section>
+
+      <!-- Authentication Section -->
+      <section id="authentication" class="api-section">
+        <h2>Authentication</h2>
+        <p>
+          All API requests require authentication using an API key in the
+          header:
+        </p>
+        <div class="code-block">
+          <button class="copy-btn">Copy</button>
+          <pre><code class="language-bash">Authorization: Bearer YOUR_API_KEY</code></pre>
+        </div>
+      </section>
+
+      <!-- Endpoints Section -->
+      <section id="endpoints" class="api-section">
+        <h2>Endpoints</h2>
+
+        <!-- User Endpoints -->
+        <div id="user-endpoints" class="endpoint">
+          <div class="endpoint-header">
+            <span class="http-method get">GET</span>
+            <span class="endpoint-url">/users/{user_id}</span>
+          </div>
+          <p>Retrieve user information</p>
+          <h6>Parameters</h6>
+          <table class="parameter-table">
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>user_id <span class="required-badge">Required</span></td>
+                <td>string</td>
+                <td>The unique identifier of the user</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre><code class="language-javascript">curl -X GET "https://api.aimaster.com/v1/users/123" \
+-H "Authorization: Bearer YOUR_API_KEY"</code></pre>
+          </div>
+          <div class="response-example">
+            <h6>Response Example</h6>
+            <pre><code class="language-json">{
+    "id": "123",
+    "name": "John Doe",
+    "email": "john@example.com",
+    "created_at": "2024-01-01T00:00:00Z"
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- Course Endpoints -->
+        <div id="courses-endpoints" class="endpoint">
+          <div class="endpoint-header">
+            <span class="http-method post">POST</span>
+            <span class="endpoint-url">/courses</span>
+          </div>
+          <p>Create a new course</p>
+          <div class="code-block">
+            <button class="copy-btn">Copy</button>
+            <pre><code class="language-javascript">curl -X POST "https://api.aimaster.com/v1/courses" \
+-H "Authorization: Bearer YOUR_API_KEY" \
+-H "Content-Type: application/json" \
+-d '{
+    "title": "Advanced AI Course",
+    "description": "Learn advanced AI concepts",
+    "duration": 120
+}'</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Error Handling -->
+      <section id="errors" class="api-section">
+        <h2>Error Handling</h2>
+        <p>
+          The API uses conventional HTTP response codes to indicate success or
+          failure of requests.
+        </p>
+        <table class="parameter-table">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>200</td>
+              <td>Success</td>
+            </tr>
+            <tr>
+              <td>400</td>
+              <td>Bad Request</td>
+            </tr>
+            <tr>
+              <td>401</td>
+              <td>Unauthorized</td>
+            </tr>
+            <tr>
+              <td>404</td>
+              <td>Not Found</td>
+            </tr>
+            <tr>
+              <td>429</td>
+              <td>Too Many Requests</td>
+            </tr>
+            <tr>
+              <td>500</td>
+              <td>Server Error</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Rate Limiting -->
+      <section id="rate-limiting" class="api-section">
+        <h2>Rate Limiting</h2>
+        <p>
+          API requests are limited to 100 requests per minute per API key. Rate
+          limit information is included in the response headers:
+        </p>
+        <div class="code-block">
+          <pre><code>X-RateLimit-Limit: 100
+X-RateLimit-Remaining: 95
+X-RateLimit-Reset: 1640995200</code></pre>
+        </div>
+      </section>
+    </main>
+
+{% endblock content %} 
 {% block scripts %}
-    <script  type="text/javascript" src="{% static 'assets/js/.js' %}" ></script>
+<script
+  type="text/javascript"
+  src="{% static 'assets/js/api_documentation.js' %}"
+></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-bash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-json.min.js"></script>
 {% endblock scripts %}
-

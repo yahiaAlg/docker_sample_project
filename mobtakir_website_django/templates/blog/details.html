@@ -2,12 +2,195 @@
 {% load static %}
 {% block title %}{% endblock title %}
 {% block styles %}
-        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/details.css' %}" />
 {% endblock styles %}
 {% block content %}
+    <!-- Reading Progress Bar -->
+    <div class="progress-bar"></div>
+
+    <!-- Post Header -->
+    <header class="post-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h1 class="display-4 mb-4">
+              Understanding Advanced AI Concepts: A Comprehensive Guide
+            </h1>
+            <div class="post-meta">
+              <span><i class="far fa-calendar"></i> Nov 29, 2024</span>
+              <span><i class="far fa-clock"></i> 15 min read</span>
+              <span><i class="far fa-eye"></i> 2.5k views</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Author Box -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="author-box d-flex align-items-center">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' fill='%23ddd'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23666'%3EAI%3C/text%3E%3C/svg%3E"
+              alt="Author"
+              class="author-avatar"
+            />
+            <div>
+              <h5 class="mb-1">Dr. Sarah Johnson</h5>
+              <p class="text-muted mb-2">AI Research Scientist</p>
+              <div class="d-flex gap-2">
+                <a href="#" class="btn btn-sm btn-outline-primary"
+                  ><i class="fab fa-twitter"></i> Follow</a
+                >
+                <a href="#" class="btn btn-sm btn-outline-secondary"
+                  ><i class="far fa-envelope"></i> Contact</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="py-5">
+      <div class="container">
+        <div class="row">
+          <!-- Social Share Sidebar -->
+          <div class="col-lg-1">
+            <div class="social-share">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="far fa-bookmark"></i></a>
+              <a href="#"><i class="far fa-share-square"></i></a>
+            </div>
+          </div>
+
+          <!-- Post Content -->
+          <div class="col-lg-7">
+            <article class="post-content">
+              <p class="lead">
+                Artificial Intelligence has become an integral part of our daily
+                lives, transforming how we work, communicate, and solve
+                problems. In this comprehensive guide, we'll explore advanced AI
+                concepts and their practical applications.
+              </p>
+
+              <h2>Understanding Neural Networks</h2>
+              <p>
+                Neural networks are computing systems inspired by the biological
+                neural networks that constitute animal brains. The concept has
+                evolved significantly since its inception...
+              </p>
+
+              <div class="my-4">
+                <img
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='400'%3E%3Crect width='800' height='400' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='%23666'%3ENeural Network Diagram%3C/text%3E%3C/svg%3E"
+                  alt="Neural Network Diagram"
+                  class="img-fluid"
+                />
+              </div>
+
+              <h3>Deep Learning Applications</h3>
+              <p>
+                Deep learning has revolutionized many fields, from computer
+                vision to natural language processing. Here are some key
+                applications...
+              </p>
+
+              <!-- Tags -->
+              <div class="mt-5">
+                <h4>Tags</h4>
+                <a href="#" class="tag">#ArtificialIntelligence</a>
+                <a href="#" class="tag">#MachineLearning</a>
+                <a href="#" class="tag">#DeepLearning</a>
+                <a href="#" class="tag">#Technology</a>
+              </div>
+            </article>
+
+            <!-- Comments Section -->
+            <section class="comments-section mt-5">
+              <h3>Comments (5)</h3>
+
+              <!-- Single Comment -->
+              <div class="comment-box mt-4">
+                <div class="d-flex">
+                  <img
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50'%3E%3Crect width='50' height='50' fill='%23ddd'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='12' fill='%23666'%3EUser%3C/text%3E%3C/svg%3E"
+                    alt="User"
+                    class="comment-avatar"
+                  />
+                  <div class="ms-3">
+                    <h6 class="mb-1">John Doe</h6>
+                    <p class="text-muted small">2 hours ago</p>
+                    <p>
+                      Excellent article! The explanations are clear and the
+                      examples really helped me understand the concepts better.
+                    </p>
+                    <button class="btn btn-sm btn-link">Reply</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Comment Form -->
+              <div class="comment-form mt-5">
+                <h4>Leave a Comment</h4>
+                <form>
+                  <div class="mb-3">
+                    <textarea
+                      class="form-control"
+                      rows="4"
+                      placeholder="Your comment..."
+                    ></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">
+                    Post Comment
+                  </button>
+                </form>
+              </div>
+            </section>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4">
+            <!-- Table of Contents -->
+            <div class="table-of-contents mb-4">
+              <h4>Contents</h4>
+              <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li>
+                  <a href="#neural-networks">Understanding Neural Networks</a>
+                </li>
+                <li><a href="#deep-learning">Deep Learning Applications</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+              </ul>
+            </div>
+
+            <!-- Related Posts -->
+            <div class="related-posts">
+              <h4 class="mb-4">Related Posts</h4>
+              <div class="card related-post mb-3">
+                <img
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Crect width='400' height='200' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='18' fill='%23666'%3ERelated Post Image%3C/text%3E%3C/svg%3E"
+                  class="card-img-top"
+                  alt="Related Post"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Introduction to Machine Learning</h5>
+                  <p class="card-text small text-muted">10 min read</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
 {% endblock content %}
 {% block scripts %}
-    <script  type="text/javascript" src="{% static 'assets/js/.js' %}" ></script>
+    <script  type="text/javascript" src="{% static 'assets/js/details.js' %}" ></script>
 {% endblock scripts %}
 
