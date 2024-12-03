@@ -14,16 +14,7 @@ services:
       - DJANGO_SETTINGS_MODULE=mobtakir_website_django.settings
     restart: always
 
-  nginx:
-    image: nginx:1.21-alpine
-    volumes:
-      - static_volume:/app/static
-      - media_volume:/app/media
-      - ./nginx:/etc/nginx/conf.d
-    ports:
-      - "80:80"
-    depends_on:
-      - web
+
 
 volumes:
   static_volume:
