@@ -1,0 +1,1 @@
+docker-compose exec web python -c "import ollama; ollama.pull('phi3')"

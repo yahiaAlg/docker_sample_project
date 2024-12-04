@@ -12,10 +12,19 @@ services:
       - "8094:8000"
     environment:
       - DJANGO_SETTINGS_MODULE=mobtakir_website_django.settings
+      - OLLAMA_HOST=http://ollama:11434
+    depends_on:
+      - ollama
     restart: always
 
-
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ollama_data:/root/.ollama
+    ports:
+      - "11434:11434"
 
 volumes:
   static_volume:
   media_volume:
+  ollama_data:
